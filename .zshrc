@@ -55,7 +55,7 @@ export PATH="/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/l
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+ export LANG=ja_JP.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -79,10 +79,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# -------------------------------------
+# 環境変数
+# -------------------------------------
 
+# SSHで接続した先で日本語が使えるようにする
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
+# エディタ
+export EDITOR=/usr/local/bin/vim
 
+# ページャ
+export PAGER=/usr/local/bin/vimpager
+export MANPAGER=/usr/local/bin/vimpager
 
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/ryu-endo/cocos2d-x-3.3/tools/cocos2d-console/bin
@@ -100,35 +112,12 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 export ANT_ROOT=/usr/local/Cellar/ant/1.9.4/libexec/bin
 export PATH=$ANT_ROOT:$PATH
 
-
-alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
-alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
-alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
-
-export PATH=/usr/local/bin:$PATH
-
-# -------------------------------------
-# 環境変数
-# -------------------------------------
-
-# SSHで接続した先で日本語が使えるようにする
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# エディタ
-export EDITOR=/usr/local/bin/vim
-
-# ページャ
-export PAGER=/usr/local/bin/vimpager
-export MANPAGER=/usr/local/bin/vimpager
-
-
 # -------------------------------------
 # zshのオプション
 # -------------------------------------
 
 ## 補完機能の強化
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 ## 入力しているコマンド名が間違っている場合にもしかして：を出す。
@@ -167,9 +156,9 @@ setopt auto_cd
 
 # cdしたあとで、自動的に ls する
 function chpwd() { ls -1 }
-[[ -s /Users/ryu-endo/.autojump/etc/profile.d/autojump.sh ]] && source /Users/ryu-endo/.autojump/etc/profile.d/autojump.sh
 
-autoload -U compinit && compinit -u
+#autojumpの設定
+[[ -s /Users/ryu-endo/.autojump/etc/profile.d/autojump.sh ]] && source /Users/ryu-endo/.autojump/etc/profile.d/autojump.sh
 
 alias -s txt='cat'
 alias -s rb='ruby'
@@ -181,5 +170,6 @@ alias cask='brew cask'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-export LANG=ja_JP.UTF-8
+alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
+alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
+alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
