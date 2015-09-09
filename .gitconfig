@@ -4,7 +4,8 @@
 	email = GoddessMinervaP@gmail.com
 [core]
 	excludesfile = /Users/ryu-endo/.gitignore_global
-	editor = subl -w
+	editor = vim -c \"set fenc=utf-8\"
+  autoCRLF = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
