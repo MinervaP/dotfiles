@@ -164,7 +164,7 @@ setopt auto_cd
 # -------------------------------------
 
 # cdしたあとで、自動的に ls する
-function chpwd() { ls -1 }
+function chpwd() { ls -a }
 
 #autojumpの設定
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
