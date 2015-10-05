@@ -200,3 +200,5 @@ alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.ke
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 
 alias ls='ls -a'
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
