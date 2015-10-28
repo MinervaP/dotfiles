@@ -5,10 +5,6 @@ def replace_image_binary(string)
   end
 end
 
-if defined? Hirb
-  Hirb.enable
-end
-
 if defined? PryByebug
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
