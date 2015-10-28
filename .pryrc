@@ -1,3 +1,5 @@
+Pry.config.theme = "solarized"
+
 def replace_image_binary(string)
   image_binary_regex = /(?<=")(\\x89PNG|GIF8[79]a|\\xFF\\xD8)((?!",).)*(?=")/
   string.gsub(image_binary_regex) do |s|
@@ -13,6 +15,9 @@ if defined? PryByebug
 end
 
 if defined? AwesomePrint
+  AwesomePrint.defaults={
+    indent: 2,
+  }
   Pry.print = proc { |output, value| output.puts replace_image_binary(value.ai) }
 else
   Pry.print = proc { |output, value| output.puts replace_image_binary(value) }
