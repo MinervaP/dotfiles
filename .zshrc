@@ -192,8 +192,6 @@ alias -s zip='unzip'
 alias -s {gif,jpg,jpeg,png,bmp}='display'
 
 alias cask='brew cask'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 
 alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
 alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
