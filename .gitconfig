@@ -3,7 +3,7 @@
 	emil = GoddessMinervaP@gmail.com
 	email = GoddessMinervaP@gmail.com
 [core]
-	excludesfile = /Users/ryu-endo/.gitignore_global
+	excludesfile = /Users/Minerva/.gitignore_global
 	editor = vim -c \"set fenc=utf-8\"
   autoCRLF = false
 [difftool "sourcetree"]
