@@ -18,6 +18,7 @@ set autoindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set smarttab
 set helplang=en
 
 "---------------------------
@@ -125,6 +126,14 @@ endfunction
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
+
+" カーソル位置の復元
+if has("autocmd")
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif
 
 " NERDTreeの設定
 let NERDTreeShowHidden = 1
