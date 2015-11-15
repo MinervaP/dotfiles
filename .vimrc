@@ -35,6 +35,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
@@ -50,12 +51,13 @@ NeoBundleCheck
 "-------------------------
 
 set background=dark
-colorscheme slate
+colorscheme solarized
+let g:solarized_termtrans=1
 
 set laststatus=2
 set t_Co=256
 let g:lightline = {
-        \ 'colorscheme': 'wombat',
+        \ 'colorscheme': 'solarized',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
