@@ -121,6 +121,11 @@ function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
+" 自動とじかっこ
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
+
 " NERDTreeの設定
 let NERDTreeShowHidden = 1
 autocmd VimEnter * execute 'NERDTree'
