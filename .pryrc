@@ -18,7 +18,7 @@ if defined? AwesomePrint
   AwesomePrint.defaults={
     indent: 2,
   }
-  Pry.print = proc { |output, value| output.puts replace_image_binary(value.ai) }
+  Pry.print = proc { |output, value| output.puts value.is_a?(String) ? replace_image_binary(value) : value }
 else
-  Pry.print = proc { |output, value| output.puts replace_image_binary(value) }
+  Pry.print = proc { |output, value| output.puts value.is_a?(String) ? replace_image_binary(value) : value }
 end
