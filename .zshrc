@@ -76,30 +76,32 @@ export DEFAULT_USER=Minerva
 # zshのオプション
 # -------------------------------------
 
-## 補完機能の強化
+# 補完機能の強化
 autoload -Uz compinit
 compinit
 
-## 入力しているコマンド名が間違っている場合にもしかして：を出す。
+# 入力しているコマンド名が間違っている場合にもしかして：を出す。
 setopt correct
 
 # ビープを鳴らさない
 setopt nobeep
 
-## 色を使う
+# 色を使う
 setopt prompt_subst
 
-## ^Dでログアウトしない。
+# ^Dでログアウトしない。
 setopt ignoreeof
 
-## バックグラウンドジョブが終了したらすぐに知らせる。
+# バックグラウンドジョブが終了したらすぐに知らせる。
 setopt no_tify
 
-## 直前と同じコマンドをヒストリに追加しない
+# 直前と同じコマンドをヒストリに追加しない
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
+# シェル間で履歴を共有しない
+setopt no_SHARE_HISTORY
 
 # -------------------------------------
 # その他
