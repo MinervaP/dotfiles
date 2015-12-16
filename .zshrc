@@ -5,6 +5,14 @@ source ~/.zplug/zplug
 
 zplug "themes/agnoster", from:oh-my-zsh
 
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+
+zplug "zsh-users/zsh-completions"
+
+zplug "mrowa44/emojify", as:command
+
+zplug "b4b4r07/enhancd", of:enhancd.sh
+
 # check コマンドで未インストール項目があるかどうか verbose にチェックし
 # false のとき（つまり未インストール項目がある）y/N プロンプトで
 # インストールする
@@ -17,6 +25,7 @@ fi
 
 # プラグインを読み込み、コマンドにパスを通す
 zplug load --verbose
+
 
 # -------------------------------------
 # 環境変数
@@ -62,6 +71,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 export DEFAULT_USER=Minerva
 
+
 # -------------------------------------
 # zshのオプション
 # -------------------------------------
@@ -90,12 +100,7 @@ setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
-# cd -[tab]で過去のディレクトリにひとっ飛びできるようにする
-setopt auto_pushd
-setopt pushd_ignore_dups
 
-# ディレクトリ名を入力するだけでcdできるようにする
-setopt auto_cd
 # -------------------------------------
 # その他
 # -------------------------------------
@@ -103,11 +108,10 @@ setopt auto_cd
 # cdしたあとで、自動的に ls する
 function chpwd() { ls -a }
 
-#autojumpの設定
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
+# enhancdの設定
+export ENHANCD_FILTER="/usr/local/bin/peco"
 
-#pecoの設定
+# pecoの設定
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -137,3 +141,5 @@ alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.ke
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 
 alias ls='ls -a'
+
+alias restart='exec $SHELL -l'
