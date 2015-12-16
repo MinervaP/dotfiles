@@ -1,13 +1,28 @@
-export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="agnoster"
-plugins=(git)
-export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-source $ZSH/oh-my-zsh.sh
-export LANG=ja_JP.UTF-8
+# -------------------------------------
+# zplugの設定
+# -------------------------------------
+source ~/.zplug/zplug
+
+zplug "themes/agnoster", from:oh-my-zsh
+
+# check コマンドで未インストール項目があるかどうか verbose にチェックし
+# false のとき（つまり未インストール項目がある）y/N プロンプトで
+# インストールする
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# プラグインを読み込み、コマンドにパスを通す
+zplug load --verbose
 
 # -------------------------------------
 # 環境変数
 # -------------------------------------
+export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export LANG=ja_JP.UTF-8
 
 #rbenvのパス
 export PATH="$HOME/.rbenv/bin:$PATH"
