@@ -32,6 +32,7 @@ zplug load --verbose
 # -------------------------------------
 export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export LANG=ja_JP.UTF-8
+fpath=(~/.zsh/completion $fpath)
 
 #rbenvのパス
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -107,9 +108,8 @@ setopt no_SHARE_HISTORY
 # その他
 # -------------------------------------
 
-# cdしたあとで、自動的に ls する
-function chpwd() { ls -a }
-
+# lsの省略
+function chpwd() { ls }
 # enhancdの設定
 export ENHANCD_FILTER="/usr/local/bin/peco"
 
