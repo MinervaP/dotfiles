@@ -1,0 +1,22 @@
+" タイトル文字列
+set titlestring=Firefox
+" 入力欄に自動フォーカスしない
+set focuscontent
+" ビジュアルベルを表示しない
+set visualbell
+" エンコードされたURLをyankする
+set yankencodedurl
+highlight Bell display:none
+" :oなどでの補完候補をサーチエンジン、履歴に限定
+set complete=sl
+" Hintモードでアルファベット使用
+set hintchars=ifjklasdhguonmerwc
+" ツールバーはアドオンとタブのみ表示
+set gui=addons,bookmarks,nomenu,nonavigation,tabs
+" スクロールバー非表示
+set noscrollbars
+" キャレットのポインタ(?)の幅
+set! ui.caretWidth=2
+" 移動幅
+noremap j 5j
+noremap k 5k
