@@ -3,7 +3,14 @@
 # -------------------------------------
 source ~/.zplug/zplug
 
+zplug "b4b4r07/zplug"  # don't forget to zplug update --self && zplug update
+
 zplug "themes/agnoster", from:oh-my-zsh
+
+# zplug "sorin-ionescu/prezto", of:init.zsh, do:"ln -s $ZPLUG_HOME/repos/sorin-ionescu/prezto ~/.zprezto"
+# zstyle ':prezto:*:*' color 'yes'
+# zstyle ':prezto:load' pmodule 'environment' 'history' 'terminal' 'utility' 'tmux'
+# zstyle ':prezto:module:terminal' auto-title 'yes'
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
