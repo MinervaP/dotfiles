@@ -80,7 +80,7 @@ setopt nobeep
 setopt prompt_subst
 # ^Dでログアウトしない。
 setopt ignoreeof
-# バックグラウンドジョブが終了したらすぐに知らせる。
+# バックグラウンドジョブが終了したらすぐに知らせる。 
 setopt no_tify
 # 直前と同じコマンドをヒストリに追加しない
 setopt hist_ignore_dups
@@ -100,12 +100,6 @@ function chpwd() {
 # -------------------------------------
 # エイリアス
 # -------------------------------------
-alias -s txt='cat'
-alias -s rb='ruby'
-alias -s py='python'
-alias -s zip='unzip'
-alias -s {gif,jpg,jpeg,png,bmp}='display'
-alias cask='brew cask'
 alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
 alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
