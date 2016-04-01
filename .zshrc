@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -e
+bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/Users/Minerva/.zshrc'
@@ -73,13 +73,19 @@ export DEFAULT_USER=Minerva
 prompt agnoster
 export ENHANCD_FILTER=fzf
 alias cd=cd::cd
+# ^rでhistoryのやつをfzfでする 
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+zle -N fh
+bindkey '^r' fh
 # 入力しているコマンド名が間違っている場合にもしかして：を出す。
 setopt correct
 # ビープを鳴らさない
 setopt nobeep
 # 色を使う
 setopt prompt_subst
-# ^Dでログアウトしない。
+# ^dでログアウトしない。
 setopt ignoreeof
 # バックグラウンドジョブが終了したらすぐに知らせる。 
 setopt no_tify
