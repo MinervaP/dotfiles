@@ -72,6 +72,7 @@ export DEFAULT_USER=Minerva
 # -------------------------------------
 prompt agnoster
 export ENHANCD_FILTER=fzf
+alias cd=cd::cd
 # 入力しているコマンド名が間違っている場合にもしかして：を出す。
 setopt correct
 # ビープを鳴らさない
