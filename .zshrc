@@ -112,3 +112,4 @@ alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.ke
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias lsa='ls -a'
 alias restart='exec $SHELL -l'
+alias tmux="TERM=xterm-256color tmux"
