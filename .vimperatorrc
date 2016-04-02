@@ -20,3 +20,6 @@ set! ui.caretWidth=2
 " 移動幅
 noremap j 5j
 noremap k 5k
+" C-rでリロード
+noremap <C-r> :source ~/.vimperatorrc<CR>:loadplugins<CR>:echo 'Reload Config!'<CR>
+
