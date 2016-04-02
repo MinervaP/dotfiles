@@ -6,7 +6,6 @@ brew 'vim'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'zsh'
-brew 'zsh-completions'
 
 tap 'sanemat/font'
 brew 'ricty', args: ['powerline']
