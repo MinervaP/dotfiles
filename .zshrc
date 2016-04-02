@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/Users/Minerva/.zshrc'
@@ -42,8 +42,6 @@ zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 zplug "zsh-users/zsh-completions"
 
-zplug "mrowa44/emojify", as:command
-
 zplug "b4b4r07/enhancd", of:enhancd.sh
 
 # check コマンドで未インストール項目があるかどうか verbose にチェックし
@@ -75,6 +73,8 @@ fh() {
 }
 zle -N fh
 bindkey '^r' fh
+# パスだけで自動でcd
+setopt auto_cd
 # 入力しているコマンド名が間違っている場合にもしかして：を出す。
 setopt correct
 # ビープを鳴らさない
