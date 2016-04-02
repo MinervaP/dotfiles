@@ -31,10 +31,7 @@ source ~/.zplug/zplug
 
 zplug "b4b4r07/zplug"  # don't forget to zplug update --self && zplug update
 
-# zplug "themes/agnoster", from:oh-my-zsh
-zplug "sorin-ionescu/prezto", \
-    of:init.zsh, \
-    do:"ln -s $ZPLUG_HOME/repos/sorin-ionescu/prezto ~/.zprezto && ln -s $ZPLUG_HOME/repos/sorin-ionescu/prezto/runcoms/zpreztorc ~/.zpreztorc"
+zplug "agnoster/3712874", from:gist
 
 zplug "junegunn/fzf-bin", \
     as:command, \
@@ -70,7 +67,6 @@ export DEFAULT_USER=Minerva
 # -------------------------------------
 # そのた
 # -------------------------------------
-prompt agnoster
 export ENHANCD_FILTER=fzf
 alias cd=cd::cd
 # ^rでhistoryのやつをfzfでする 
