@@ -60,6 +60,7 @@ call dein#begin(expand('~/.vim/dein'))
 call dein#add('Shougo/dein.vim')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('itchyny/lightline.vim')
+call dein#add('Shougo/neocomplete.vim')
 
 call dein#end()
 
@@ -138,3 +139,16 @@ endfunction
 function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
+" -------------------------------------
+" neocomplete.vimの設定
+" -------------------------------------
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 0
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" TABで補完
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" <BS>で閉じて文字削除
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
