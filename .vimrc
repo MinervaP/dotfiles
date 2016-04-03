@@ -1,5 +1,5 @@
 " -------------------------------------
-" vimのオプション
+"  vimのオプション
 " -------------------------------------
 set number
 set ruler
@@ -51,6 +51,11 @@ set t_vb=
 set noerrorbells
 
 " -------------------------------------
+" キーバインド
+" -------------------------------------
+let mapleader = "\<Space>"
+
+" -------------------------------------
 " dein.vimの設定
 " -------------------------------------
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
@@ -61,6 +66,7 @@ call dein#add('Shougo/dein.vim')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Shougo/neocomplete.vim')
+call dein#add('easymotion/vim-easymotion')
 
 call dein#end()
 
@@ -152,3 +158,13 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <BS>で閉じて文字削除
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" -------------------------------------
+" vim-easymotionの設定
+" -------------------------------------
+map <Leader> <Plug>(easymotion-prefix)
+" ハイライト
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionTarget2First ctermbg=none ctermfg=magenta
+hi EasyMotionTarget2Second ctermbg=none ctermfg=magenta
+
