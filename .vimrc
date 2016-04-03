@@ -10,7 +10,7 @@ set cmdheight=2
 set showmatch
 set helpheight=999
 set list
-set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮
+set listchars=tab:▸\ ,trail:-,nbsp:%,extends:>,precedes:<,eol:¬
 
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
@@ -70,6 +70,7 @@ call dein#add('easymotion/vim-easymotion')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/neoyank.vim')
+call dein#add('scrooloose/nerdtree')
 
 call dein#end()
 
@@ -80,8 +81,8 @@ syntax enable
 set t_Co=256
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+let g:solarized_termcolors = 256
+let g:solarized_termtrans = 1
 
 " -------------------------------------
 " lightline.vimの設定
@@ -186,3 +187,18 @@ nnoremap <silent> [unite]u :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file<CR>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
 nnoremap <silent> [unite]n :<C-u>Unite file/new<CR>
+
+" -------------------------------------
+" NERDTreeの設定
+" -------------------------------------
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+" ファイル指定で開かれた場合はNERDTreeは表示しない
+if !argc()
+  autocmd vimenter * NERDTree
+endif
+" 隠しファイルを表示
+let g:NERDTreeShowHidden = 1
+" C-eでNERDTreeをトグルする
+noremap <silent><C-e> :NERDTreeToggle<CR>
