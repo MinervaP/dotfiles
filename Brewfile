@@ -3,6 +3,7 @@ tap 'caskroom/cask'
 
 brew 'git'
 brew 'vim', args: ['with-lua']
+brew 'vimpager'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'zsh'

@@ -4,6 +4,7 @@
 [core]
     excludesfile = /Users/Minerva/.gitignore_global
     editor = vim -c \"set fenc=utf-8\"
+    pager = vimpager
     autoCRLF = false
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"

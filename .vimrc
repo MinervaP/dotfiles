@@ -196,11 +196,12 @@ nnoremap <silent> [unite]n :<C-u>Unite file/new<CR>
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-" ファイル指定で開かれた場合はNERDTreeは表示しない
-if !argc()
+" ファイル指定で開かれた場合とvimpagerのときはNERDTreeは表示しない
+if !(argc() || exists('g:vimpager'))
   autocmd vimenter * NERDTree
 endif
 " 隠しファイルを表示
 let g:NERDTreeShowHidden = 1
 " C-eでNERDTreeをトグルする
 noremap <silent><C-e> :NERDTreeToggle<CR>
+
