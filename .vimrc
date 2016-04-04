@@ -71,6 +71,8 @@ call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/neoyank.vim')
 call dein#add('scrooloose/nerdtree')
+call dein#add('Townk/vim-autoclose')
+call dein#add('tpope/vim-endwise')
 
 call dein#end()
 
