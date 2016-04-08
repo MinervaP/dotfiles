@@ -76,6 +76,9 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('Townk/vim-autoclose')
 call dein#add('tpope/vim-endwise')
 
+call dein#add('keith/swift.vim')
+call dein#add('mitsuse/autocomplete-swift')
+
 call dein#end()
 
 " -------------------------------------

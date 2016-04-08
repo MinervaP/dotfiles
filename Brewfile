@@ -7,6 +7,7 @@ brew 'vimpager'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'zsh'
+brew 'sourcekitten'
 
 tap 'sanemat/font'
 brew 'ricty', args: ['powerline']
