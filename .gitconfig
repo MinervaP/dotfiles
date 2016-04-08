@@ -1,16 +1,13 @@
 [user]
-    name = MinervaP
+    name = minerva1129
     email = GoddessMinervaP@gmail.com
 [core]
     excludesfile = /Users/Minerva/.gitignore_global
     editor = vim -c \"set fenc=utf-8\"
     pager = vimpager
     autoCRLF = false
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
+[color]
+    ui = auto
 [alias]
     co = checkout
 [push]
