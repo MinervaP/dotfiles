@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 
 brew 'git'
+brew 'gibo'
 brew 'vim', args: ['with-lua']
 brew 'vimpager'
 brew 'tmux'
@@ -24,3 +25,5 @@ cask 'openoffice'
 cask 'virtualbox'
 cask 'vagrant'
 cask 'licecap'
+cask 'vox'
+cask 'vox-preferences-pane'
