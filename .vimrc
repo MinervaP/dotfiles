@@ -169,6 +169,10 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <BS>で閉じて文字削除
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" omni補完を有効にする
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 
 " -------------------------------------
 " vim-easymotionの設定
