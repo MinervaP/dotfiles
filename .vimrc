@@ -36,7 +36,7 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 set smartindent
-set clipboard=unnamed,unnamedplus
+set clipboard=unnamed
 set mouse=a
 set shellslash
 set wildmenu
@@ -77,6 +77,7 @@ call dein#add('Shougo/neoyank.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
+call dein#add('LeafCage/yankround.vim')
 
 call dein#add('keith/swift.vim')
 call dein#add('mitsuse/autocomplete-swift')
@@ -203,7 +204,7 @@ nmap <Leader>u [unite]
 " Prefix + uで最近開いたファイル fでカレントディレクトリ以下の全ファイル yでヤンク履歴 nで新規ファイル作成
 nnoremap <silent> [unite]u :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> [unite]f :<C-u>Unite file<CR>
-nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
+nnoremap <silent> [unite]y :<C-u>Unite yankround history/yank<CR>
 nnoremap <silent> [unite]n :<C-u>Unite file/new<CR>
 
 " -------------------------------------
@@ -220,4 +221,16 @@ endif
 let g:NERDTreeShowHidden = 1
 " C-eでNERDTreeをトグルする
 noremap <silent><C-e> :NERDTreeToggle<CR>
+
+" -------------------------------------
+" yankround.vimの設定
+" -------------------------------------
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
 
