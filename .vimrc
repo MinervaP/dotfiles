@@ -56,6 +56,8 @@ set pumheight=10
 let mapleader = "\<Space>"
 " Yで行末までヤンク
 nnoremap Y y$
+" esc2回で:noh
+nnoremap <silent> <ESC><ESC> :noh<CR>
 
 " -------------------------------------
 " dein.vimの設定
@@ -73,7 +75,7 @@ call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/neoyank.vim')
 call dein#add('scrooloose/nerdtree')
-call dein#add('Townk/vim-autoclose')
+call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
 
 call dein#add('keith/swift.vim')
@@ -168,11 +170,16 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 " TABで補完
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <BS>で閉じて文字削除
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<BS>"
 " omni補完を有効にする
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " -------------------------------------
 " vim-easymotionの設定
