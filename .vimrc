@@ -83,7 +83,7 @@ call dein#add('tyru/open-browser.vim')
 call dein#add('keith/swift.vim')
 call dein#add('mitsuse/autocomplete-swift')
 
-call dein#add('kannokanno/previm')
+call dein#add('minerva1129/previm')
 
 call dein#end()
 
