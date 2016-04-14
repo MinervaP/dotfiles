@@ -206,7 +206,7 @@ nnoremap [unite] <Nop>
 nmap <Leader>u [unite]
 " Prefix + uで最近開いたファイル fでカレントディレクトリ以下の全ファイル yでヤンク履歴 nで新規ファイル作成
 nnoremap <silent> [unite]u :<C-u>Unite file_mru buffer<CR>
-nnoremap <silent> [unite]f :<C-u>Unite file<CR>
+nnoremap <silent> [unite]f :<C-u>Unite file_rec<CR>
 nnoremap <silent> [unite]y :<C-u>Unite yankround history/yank<CR>
 nnoremap <silent> [unite]n :<C-u>Unite file/new<CR>
 
