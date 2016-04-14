@@ -78,9 +78,12 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
 call dein#add('LeafCage/yankround.vim')
+call dein#add('tyru/open-browser.vim')
 
 call dein#add('keith/swift.vim')
 call dein#add('mitsuse/autocomplete-swift')
+
+call dein#add('kannokanno/previm')
 
 call dein#end()
 
@@ -234,3 +237,7 @@ nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
+" -------------------------------------
+" previmの設定
+" -------------------------------------
+let g:previm_enable_realtime = 1
