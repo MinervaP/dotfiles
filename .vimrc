@@ -56,8 +56,10 @@ set pumheight=10
 let mapleader = "\<Space>"
 " Yで行末までヤンク
 nnoremap Y y$
-" esc2回で:noh
+" ESC2回で:noh
 nnoremap <silent> <ESC><ESC> :noh<CR>
+" jjでESC
+inoremap <silent> jj <ESC>
 
 " -------------------------------------
 " dein.vimの設定
