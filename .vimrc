@@ -243,3 +243,4 @@ nmap <C-n> <Plug>(yankround-next)
 " previmの設定
 " -------------------------------------
 let g:previm_enable_realtime = 1
+

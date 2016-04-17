@@ -13,17 +13,6 @@ brew 'sourcekitten'
 tap 'sanemat/font'
 brew 'ricty', args: ['powerline']
 
-
 cask 'google-japanese-ime'
 cask 'firefox'
 cask 'iterm2'
-cask 'dropbox'
-cask 'alfred'
-cask 'skype'
-cask 'wireshark'
-cask 'openoffice'
-cask 'virtualbox'
-cask 'vagrant'
-cask 'licecap'
-cask 'vox'
-cask 'vox-preferences-pane'
