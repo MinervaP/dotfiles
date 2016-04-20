@@ -60,6 +60,8 @@ nnoremap Y y$
 nnoremap <silent> <ESC><ESC> :noh<CR>
 " jjでESC
 inoremap <silent> jj <ESC>
+" <Leader>p で pasteモード切り替え
+noremap <silent> <Leader>p :<C-u>set paste!<CR>
 
 " -------------------------------------
 " dein.vimの設定
@@ -230,14 +232,12 @@ noremap <silent><C-e> :NERDTreeToggle<CR>
 " -------------------------------------
 " yankround.vimの設定
 " -------------------------------------
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
+map p <Plug>(yankround-p)
+map P <Plug>(yankround-P)
+map gp <Plug>(yankround-gp)
+map gP <Plug>(yankround-gP)
+map <C-p> <Plug>(yankround-prev)
+map <C-n> <Plug>(yankround-next)
 
 " -------------------------------------
 " previmの設定
