@@ -129,4 +129,3 @@ alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias lsa='ls -a'
 alias restart='exec $SHELL -l'
 alias tmux="TERM=xterm-256color tmux"
-alias pskl="ps aux | fzf | sed 's/  */ /g' | cut -d ' ' -f2 | xargs kill -9"
