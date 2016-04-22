@@ -27,7 +27,8 @@ fi
 # -------------------------------------
 # zplug
 # -------------------------------------
-source ~/.zplug/zplug
+# zplugがないときはクローンする
+source ~/.zplug/zplug || { curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug && source ~/.zplug/zplug }
 
 zplug "b4b4r07/zplug"  # don't forget to zplug update --self && zplug update
 
