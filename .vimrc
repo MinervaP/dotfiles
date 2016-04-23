@@ -1,51 +1,5 @@
 set nocompatible
 " -------------------------------------
-" dein.vimの設定
-" -------------------------------------
-let s:plugin_dir = expand('~/.vim/dein/')
-let s:dein_dir = s:plugin_dir . 'repos/github.com/Shougo/dein.vim'
-
-" dein.vimがないときはgit cloneする
-if !isdirectory(s:dein_dir)
-  call mkdir(s:dein_dir, 'p')
-  silent execute printf('!git clone %s %s', 'https://github.com/Shougo/dein.vim', s:dein_dir)
-endif
-
-execute 'set runtimepath+=' . s:dein_dir
-
-if dein#load_state(s:plugin_dir)
-  call dein#begin(s:plugin_dir)
-
-  call dein#add('Shougo/dein.vim')
-  call dein#add('altercation/vim-colors-solarized')
-  call dein#add('itchyny/lightline.vim')
-  call dein#add('Shougo/neocomplete.vim')
-  call dein#add('easymotion/vim-easymotion')
-  call dein#add('Shougo/unite.vim')
-  call dein#add('Shougo/neomru.vim')
-  call dein#add('Shougo/neoyank.vim')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('jiangmiao/auto-pairs')
-  call dein#add('tpope/vim-endwise')
-  call dein#add('LeafCage/yankround.vim')
-  call dein#add('tyru/open-browser.vim')
-
-  call dein#add('keith/swift.vim')
-  call dein#add('mitsuse/autocomplete-swift')
-
-  call dein#add('minerva1129/previm')
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-if dein#check_install()
-  call dein#install()
-endif
-
-filetype plugin indent on
-
-" -------------------------------------
 "  vimのオプション
 " -------------------------------------
 set number
@@ -96,6 +50,54 @@ set wrap
 set display=lastline
 set textwidth=0
 set pumheight=10
+
+" -------------------------------------
+" dein.vimの設定
+" -------------------------------------
+let s:plugin_dir = expand('~/.vim/dein/')
+let s:dein_dir = s:plugin_dir . 'repos/github.com/Shougo/dein.vim'
+
+" dein.vimがないときはgit cloneする
+if !isdirectory(s:dein_dir)
+  call mkdir(s:dein_dir, 'p')
+  silent execute printf('!git clone %s %s', 'https://github.com/Shougo/dein.vim', s:dein_dir)
+endif
+
+execute 'set runtimepath^=' . s:dein_dir
+
+if dein#load_state(s:plugin_dir)
+  call dein#begin(s:plugin_dir)
+
+  call dein#add('Shougo/dein.vim')
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('easymotion/vim-easymotion')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neomru.vim')
+  call dein#add('Shougo/neoyank.vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('jiangmiao/auto-pairs')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('LeafCage/yankround.vim')
+  call dein#add('tyru/open-browser.vim')
+
+  call dein#add('powerman/vim-plugin-AnsiEsc')
+
+  call dein#add('keith/swift.vim')
+  call dein#add('mitsuse/autocomplete-swift')
+
+  call dein#add('minerva1129/previm')
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+if dein#check_install()
+  call dein#install()
+endif
+
+filetype plugin indent on
 
 " -------------------------------------
 " キーバインド
