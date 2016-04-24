@@ -124,9 +124,10 @@ function chpwd() {
 # -------------------------------------
 # エイリアス
 # -------------------------------------
-alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
-alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
+alias onkeyboard='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext'
+alias offkeyboard='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext'
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias lsa='ls -a'
 alias restart='exec $SHELL -l'
-alias tmux="TERM=xterm-256color tmux"
+alias tmux='TERM=xterm-256color tmux'
+
