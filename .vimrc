@@ -81,6 +81,7 @@ if dein#load_state(s:plugin_dir)
   call dein#add('tpope/vim-endwise')
   call dein#add('LeafCage/yankround.vim')
   call dein#add('tyru/open-browser.vim')
+  call dein#add('airblade/vim-gitgutter')
 
   call dein#add('keith/swift.vim')
   call dein#add('mitsuse/autocomplete-swift')
@@ -262,4 +263,9 @@ map <C-n> <Plug>(yankround-next)
 " previmの設定
 " -------------------------------------
 let g:previm_enable_realtime = 1
+
+" -------------------------------------
+" vim-gitgutterの設定
+" -------------------------------------
+let g:gitgutter_map_keys = 0
 
