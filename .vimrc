@@ -82,8 +82,6 @@ if dein#load_state(s:plugin_dir)
   call dein#add('LeafCage/yankround.vim')
   call dein#add('tyru/open-browser.vim')
 
-  call dein#add('powerman/vim-plugin-AnsiEsc')
-
   call dein#add('keith/swift.vim')
   call dein#add('mitsuse/autocomplete-swift')
 
