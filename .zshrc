@@ -76,7 +76,6 @@ export PAGER=vimpager
 # -------------------------------------
 # enahancdの設定
 export ENHANCD_FILTER=fzf
-alias cd=cd::cd
 # zsh-hisroty-substring-search の設定
 zle -N history-substring-search-up
 zle -N history-substring-search-down
@@ -115,9 +114,9 @@ setopt no_SHARE_HISTORY
 # lsの省略
 function chpwd() {
   if [ 20 -gt `ls -1 | wc -l` ]; then
-    ls -a
+    ls -aG
   else
-    ls
+    ls -G
   fi
 }
 
@@ -127,7 +126,6 @@ function chpwd() {
 alias onkeyboard='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext'
 alias offkeyboard='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext'
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
-alias lsa='ls -a'
+alias ls='ls -aG'
 alias restart='exec $SHELL -l'
-alias tmux='TERM=xterm-256color tmux'
 
