@@ -5,7 +5,7 @@
     excludesfile = ~/.gitignore_global
     editor = vim
     autoCRLF = false
-    pager = ~/vimpager/vimpager
+    pager = vimpager
 [color]
     ui = auto
 [alias]
