@@ -1,11 +1,11 @@
 [user]
     name = minerva1129
-    email = GoddessMinervaP@gmail.com
+    email = goddessminervap@gmail.com
 [core]
-    excludesfile = /Users/Minerva/.gitignore_global
-    editor = vim -c \"set fenc=utf-8\"
-    pager = vimpager
+    excludesfile = ~/.gitignore_global
+    editor = vim
     autoCRLF = false
+    pager = ~/vimpager/vimpager
 [color]
     ui = auto
 [alias]
