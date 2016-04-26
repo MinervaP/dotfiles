@@ -71,6 +71,7 @@ if dein#load_state(s:plugin_dir)
   call dein#add('Shougo/dein.vim')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('itchyny/lightline.vim')
+  call dein#add('tpope/vim-fugitive')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('easymotion/vim-easymotion')
   call dein#add('Shougo/unite.vim')
@@ -163,7 +164,7 @@ endfunction
 function! LightLineFugitive()
   try
     if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-      return fugitive#head()
+      return ' ' . fugitive#head()
     endif
   catch
   endtry
