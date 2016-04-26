@@ -32,7 +32,7 @@ source ~/.zplug/zplug || { curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug &
 
 zplug "b4b4r07/zplug"  # don't forget to zplug update --self && zplug update
 
-zplug "agnoster/3712874", from:gist
+zplug "themes/agnoster", from:oh-my-zsh
 
 zplug "junegunn/fzf-bin", \
     as:command, \
