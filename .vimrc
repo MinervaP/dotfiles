@@ -104,8 +104,8 @@ filetype plugin indent on
 let mapleader = "\<Space>"
 " Yで行末までヤンク
 nnoremap Y y$
-" ESC2回で:noh
-nnoremap <silent> <ESC><ESC> :noh<CR>
+" ESCで:noh
+nnoremap <silent> <ESC> :noh<CR>
 " jjでESC
 inoremap <silent> jj <ESC>
 " <Leader>p で pasteモード切り替え
