@@ -164,7 +164,7 @@ endfunction
 function! LightLineFugitive()
   try
     if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-      return ' ' . fugitive#head()
+      return empty(fugitive#head()) ? '' : ' ' . fugitive#head()
     endif
   catch
   endtry
