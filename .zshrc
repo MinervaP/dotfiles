@@ -32,7 +32,7 @@ source ~/.zplug/zplug || { curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug &
 
 zplug "b4b4r07/zplug"  # don't forget to zplug update --self && zplug update
 
-zplug "themes/agnoster", from:oh-my-zsh
+zplug "bhilburn/powerlevel9k", of:powerlevel9k.zsh-theme
 
 zplug "junegunn/fzf-bin", \
     as:command, \
@@ -69,12 +69,17 @@ zplug load --verbose
 # 環境変数
 # -------------------------------------
 export DEFAULT_USER=Minerva
+export TERM='xterm-256color'
 export EDITOR=vim
 export PAGER=vimpager
 
 # -------------------------------------
 # そのた
 # -------------------------------------
+# powerlevel9kの設定
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs root_indicator context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_STATUS_VERBOSE=false
 # enahancdの設定
 export ENHANCD_FILTER=fzf
 # zsh-hisroty-substring-search の設定
