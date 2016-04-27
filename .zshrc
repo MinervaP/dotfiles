@@ -69,6 +69,7 @@ zplug load --verbose
 # 環境変数
 # -------------------------------------
 export DEFAULT_USER=Minerva
+export EDITOR=vim
 export PAGER=vimpager
 
 # -------------------------------------
