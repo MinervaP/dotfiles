@@ -77,9 +77,12 @@ export PAGER=vimpager
 # そのた
 # -------------------------------------
 # powerlevel9kの設定
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs root_indicator context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs_joined root_indicator_joined context_joined dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_SHORTEN_DELIMITER=''
 # enahancdの設定
 export ENHANCD_FILTER=fzf
 # zsh-hisroty-substring-search の設定
