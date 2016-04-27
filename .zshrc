@@ -72,6 +72,7 @@ export DEFAULT_USER=Minerva
 export TERM='xterm-256color'
 export EDITOR=vim
 export PAGER=vimpager
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # -------------------------------------
 # そのた

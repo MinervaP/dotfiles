@@ -111,6 +111,13 @@ nnoremap <silent> <ESC> :noh<CR>
 inoremap <silent> jj <ESC>
 " <Leader>p で pasteモード切り替え
 noremap <silent> <Leader>p :<C-u>set paste!<CR>
+" 表示行単位で上下移動
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+nnoremap gj j
+nnoremap gk k
 
 " -------------------------------------
 " themeの設定
