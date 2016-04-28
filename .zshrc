@@ -28,16 +28,16 @@ fi
 # zplug
 # -------------------------------------
 # zplugがないときはクローンする
-source ~/.zplug/zplug || { curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug && source ~/.zplug/zplug }
+source ~/.zplug/init.zsh || { git clone https://github.com/b4b4r07/zplug.git ~/.zplug && source ~/.zplug/init.zsh }
 
-zplug "b4b4r07/zplug"  # don't forget to zplug update --self && zplug update
+zplug "b4b4r07/zplug", at:v2  # don't forget to zplug update --self && zplug update
 
-zplug "bhilburn/powerlevel9k", of:powerlevel9k.zsh-theme
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 zplug "junegunn/fzf-bin", \
     as:command, \
     from:gh-r, \
-    file:fzf
+    rename-to:fzf
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
@@ -47,7 +47,7 @@ zplug "zsh-users/zsh-autosuggestions"
 
 zplug "zsh-users/zsh-history-substring-search"
 
-zplug "b4b4r07/enhancd", of:enhancd.sh
+zplug "b4b4r07/enhancd", use:enhancd.sh
 
 zplug 'plugins/brew', from:oh-my-zsh
 zplug 'plugins/npm', from:oh-my-zsh
