@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -e
+bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/Users/Minerva/.zshrc'
@@ -77,9 +77,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # -------------------------------------
 # そのた
 # -------------------------------------
+# jjでノーマルモードに戻る
+bindkey -M viins 'jj' vi-cmd-mode
 # powerlevel9kの設定
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs_joined root_indicator_joined context_joined dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode)
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
