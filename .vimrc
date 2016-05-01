@@ -246,9 +246,9 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " ファイル指定で開かれた場合とvimpagerのときはNERDTreeは表示しない
-if !(argc() || exists('g:vimpager'))
-  autocmd vimenter * NERDTree
-endif
+autocmd vimenter * if !(argc() || exists('g:vimpager')) | NERDTree | endif
+" 最後のバッファを閉じるときにNERDTreeも一緒に閉じる
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " 隠しファイルを表示
 let g:NERDTreeShowHidden = 1
 " C-eでNERDTreeをトグルする
