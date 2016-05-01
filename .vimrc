@@ -106,7 +106,7 @@ let mapleader = "\<Space>"
 " Yで行末までヤンク
 nnoremap Y y$
 " ESCで:noh
-nnoremap <silent> <ESC> :noh<CR>
+nnoremap <silent> <ESC><ESC> :noh<CR>
 " jjでESC
 inoremap <silent> jj <ESC>
 " <Leader>p で pasteモード切り替え
