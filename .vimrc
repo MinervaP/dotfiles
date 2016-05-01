@@ -65,33 +65,30 @@ endif
 
 execute 'set runtimepath^=' . s:dein_dir
 
-if dein#load_state(s:plugin_dir)
-  call dein#begin(s:plugin_dir)
+call dein#begin(s:plugin_dir)
 
-  call dein#add('Shougo/dein.vim')
-  call dein#add('altercation/vim-colors-solarized')
-  call dein#add('itchyny/lightline.vim')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('Shougo/neocomplete.vim')
-  call dein#add('easymotion/vim-easymotion')
-  call dein#add('Shougo/unite.vim')
-  call dein#add('Shougo/neomru.vim')
-  call dein#add('Shougo/neoyank.vim')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('jiangmiao/auto-pairs')
-  call dein#add('tpope/vim-endwise')
-  call dein#add('LeafCage/yankround.vim')
-  call dein#add('tyru/open-browser.vim')
-  call dein#add('airblade/vim-gitgutter')
+call dein#add('Shougo/dein.vim')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('itchyny/lightline.vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('easymotion/vim-easymotion')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/neoyank.vim')
+call dein#add('scrooloose/nerdtree')
+call dein#add('jiangmiao/auto-pairs')
+call dein#add('tpope/vim-endwise')
+call dein#add('LeafCage/yankround.vim')
+call dein#add('tyru/open-browser.vim')
+call dein#add('airblade/vim-gitgutter')
 
-  call dein#add('keith/swift.vim')
-  call dein#add('mitsuse/autocomplete-swift')
+call dein#add('keith/swift.vim')
+call dein#add('mitsuse/autocomplete-swift')
 
-  call dein#add('minerva1129/previm')
+call dein#add('minerva1129/previm')
 
-  call dein#end()
-  call dein#save_state()
-endif
+call dein#end()
 
 if dein#check_install()
   call dein#install()
@@ -106,7 +103,7 @@ let mapleader = "\<Space>"
 " Yで行末までヤンク
 nnoremap Y y$
 " ESCで:noh
-nnoremap <silent> <ESC><ESC> :noh<CR>
+noremap <silent> <ESC><ESC> :<C-u>noh<CR>
 " jjでESC
 inoremap <silent> jj <ESC>
 " <Leader>p で pasteモード切り替え
