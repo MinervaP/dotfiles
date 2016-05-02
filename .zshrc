@@ -62,9 +62,6 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# プラグインを読み込み、コマンドにパスを通す
-zplug load --verbose
-
 # -------------------------------------
 # 環境変数
 # -------------------------------------
@@ -142,3 +139,5 @@ alias ls='ls -aG'
 alias restart='exec $SHELL -l'
 alias pskl="ps aux | fzf | awk '{ print \$2 }' | xargs kill"
 
+# プラグインを読み込み、コマンドにパスを通す
+zplug load --verbose
