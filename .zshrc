@@ -72,7 +72,6 @@ export DEFAULT_USER=Minerva
 export TERM='xterm-256color'
 export EDITOR=vim
 export PAGER=vimpager
-export XDG_CONFIG_HOME="$HOME/.config"
 
 # -------------------------------------
 # そのた
@@ -80,6 +79,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # jjでノーマルモードに戻る
 bindkey -M viins 'jj' vi-cmd-mode
 # powerlevel9kの設定
+POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs_joined root_indicator_joined context_joined dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode)
 POWERLEVEL9K_STATUS_VERBOSE=false
