@@ -32,6 +32,7 @@ source ~/.zplug/init.zsh || { git clone https://github.com/b4b4r07/zplug.git ~/.
 
 zplug "b4b4r07/zplug", at:v2  # don't forget to zplug update --self && zplug update
 
+POWERLEVEL9K_MODE='awesome-patched'
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 zplug "junegunn/fzf-bin", \
@@ -62,6 +63,9 @@ if ! zplug check --verbose; then
     fi
 fi
 
+# プラグインを読み込み、コマンドにパスを通す
+zplug load --verbose
+
 # -------------------------------------
 # 環境変数
 # -------------------------------------
@@ -76,8 +80,7 @@ export PAGER=vimpager
 # jjでノーマルモードに戻る
 bindkey -M viins 'jj' vi-cmd-mode
 # powerlevel9kの設定
-POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs_joined root_indicator_joined context_joined dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status_joined background_jobs_joined root_indicator_joined context_joined dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode)
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
@@ -139,5 +142,3 @@ alias ls='ls -aG'
 alias restart='exec $SHELL -l'
 alias pskl="ps aux | fzf | awk '{ print \$2 }' | xargs kill"
 
-# プラグインを読み込み、コマンドにパスを通す
-zplug load --verbose
