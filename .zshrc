@@ -32,7 +32,7 @@ source ~/.zplug/init.zsh || { git clone https://github.com/b4b4r07/zplug.git ~/.
 
 zplug "b4b4r07/zplug", at:v2  # don't forget to zplug update --self && zplug update
 
-POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='awesome-patched'
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 zplug "junegunn/fzf-bin", \
