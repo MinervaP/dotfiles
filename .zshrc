@@ -8,7 +8,7 @@ bindkey -v
 zstyle :compinstall filename '/Users/Minerva/.zshrc'
 
 autoload -Uz compinit
-compinit
+compinit -u
 # End of lines added by compinstall
 
 # -------------------------------------
