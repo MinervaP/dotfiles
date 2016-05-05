@@ -108,15 +108,15 @@ zle -N fh
 bindkey '^r' fh
 # パスだけで自動でcd
 setopt auto_cd
-# 入力しているコマンド名が間違っている場合にもしかして：を出す。
+# 入力しているコマンド名が間違っている場合にもしかして：を出す
 setopt correct
 # ビープを鳴らさない
 setopt nobeep
 # 色を使う
 setopt prompt_subst
-# ^dでログアウトしない。
+# ^dでログアウトしない
 setopt ignoreeof
-# バックグラウンドジョブが終了したらすぐに知らせる。 
+# バックグラウンドジョブが終了したらすぐに知らせる
 setopt no_tify
 # 直前と同じコマンドをヒストリに追加しない
 setopt hist_ignore_dups
