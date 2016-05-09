@@ -219,9 +219,9 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 " -------------------------------------
 map <Leader> <Plug>(easymotion-prefix)
 " ハイライト
-hi EasyMotionTarget ctermbg=none ctermfg=red
-hi EasyMotionTarget2First ctermbg=none ctermfg=magenta
-hi EasyMotionTarget2Second ctermbg=none ctermfg=magenta
+highlight EasyMotionTarget ctermbg=none ctermfg=darkred
+highlight EasyMotionTarget2First ctermbg=none ctermfg=darkcyan
+highlight EasyMotionTarget2Second ctermbg=none ctermfg=darkcyan
 
 " -------------------------------------
 " Unite.vimの設定
