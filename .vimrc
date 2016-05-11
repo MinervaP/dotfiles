@@ -82,6 +82,7 @@ call dein#add('tpope/vim-endwise')
 call dein#add('LeafCage/yankround.vim')
 call dein#add('tyru/open-browser.vim')
 call dein#add('airblade/vim-gitgutter')
+call dein#add('Yggdroot/indentLine')
 
 call dein#add('keith/swift.vim')
 call dein#add('mitsuse/autocomplete-swift')
