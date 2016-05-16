@@ -30,25 +30,25 @@ fi
 # zplugがないときはクローンする
 source ~/.zplug/init.zsh || { git clone https://github.com/b4b4r07/zplug.git ~/.zplug && source ~/.zplug/init.zsh }
 
-zplug "b4b4r07/zplug", at:v2  # don't forget to zplug update --self && zplug update
+zplug 'b4b4r07/zplug', at:v2  # don't forget to zplug update --self && zplug update
 
 POWERLEVEL9K_MODE='awesome-patched'
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 
-zplug "junegunn/fzf-bin", \
+zplug 'junegunn/fzf-bin', \
     as:command, \
     from:gh-r, \
     rename-to:fzf
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug 'zsh-users/zsh-syntax-highlighting', nice:10
 
-zplug "zsh-users/zsh-completions"
+zplug 'zsh-users/zsh-completions'
 
-zplug "zsh-users/zsh-autosuggestions"
+zplug 'zsh-users/zsh-autosuggestions'
 
-zplug "zsh-users/zsh-history-substring-search"
+zplug 'zsh-users/zsh-history-substring-search'
 
-zplug "b4b4r07/enhancd", use:enhancd.sh
+zplug 'b4b4r07/enhancd', use:enhancd.sh
 
 zplug 'plugins/brew', from:oh-my-zsh
 zplug 'plugins/npm', from:oh-my-zsh
@@ -57,7 +57,7 @@ zplug 'plugins/npm', from:oh-my-zsh
 # false のとき（つまり未インストール項目がある）y/N プロンプトで
 # インストールする
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
+    printf 'Install? [y/N]: '
     if read -q; then
         echo; zplug install
     fi
@@ -82,10 +82,10 @@ bindkey -M viins 'jj' vi-cmd-mode
 # powerlevel9kの設定
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status_joined background_jobs_joined root_indicator_joined context_joined dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode)
-POWERLEVEL9K_OS_ICON_BACKGROUND="234"
+POWERLEVEL9K_OS_ICON_BACKGROUND='234'
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_SHORTEN_DELIMITER=''
 # enahancdの設定
 export ENHANCD_FILTER=fzf
@@ -141,5 +141,5 @@ alias offkeyboard='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.ke
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias ls='ls -aG'
 alias restart='exec $SHELL -l'
-alias pskl="ps aux | fzf | awk '{ print \$2 }' | xargs kill"
+alias pskl='ps aux | fzf | awk '{ print \$2 }' | xargs kill'
 
