@@ -3,9 +3,7 @@
     email = goddessminervap@gmail.com
 [core]
     excludesfile = ~/.gitignore_global
-    editor = vim
     autoCRLF = false
-    pager = vimpager
 [color]
     ui = auto
 [alias]
