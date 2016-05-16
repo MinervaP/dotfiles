@@ -140,6 +140,6 @@ alias onkeyboard='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/
 alias offkeyboard='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext'
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias ls='ls -aG'
-alias restart='exec $SHELL -l'
-alias pskl='ps aux | fzf | awk '{ print \$2 }' | xargs kill'
+alias restart="exec $SHELL -l"
+alias pskl="ps aux | fzf | awk '{ print \$2 }' | xargs kill"
 
