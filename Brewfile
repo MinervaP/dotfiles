@@ -4,7 +4,6 @@ tap 'caskroom/cask'
 brew 'git'
 brew 'gibo'
 brew 'vim', args: ['with-lua']
-brew 'vimpager'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'zsh'
