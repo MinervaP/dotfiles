@@ -21,7 +21,6 @@ if [ -d ${HOME}/.anyenv ] ; then
     do
         export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
     done
-
 fi
 
 # -------------------------------------

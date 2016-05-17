@@ -28,6 +28,8 @@ else
   if [ ! `which anyenv` ]; then
     echo "Installing anyenv ..."
     git clone https://github.com/riywo/anyenv ~/.anyenv
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
   fi
 
   echo "Installing **envs ..."
@@ -35,26 +37,13 @@ else
   anyenv install pyenv
   anyenv install ndenv
 
-  echo "Installing Ruby ..."
-  rbenv install 2.3.0
-  rbenv global 2.3.0
-
-  echo "Installing Python ..."
-  pyenv install 2.7.9
-  pyenv install 3.5.1
-  pyenv global 3.5.1 2.7.9
-
-  echo "Installing Node.js ..."
-  ndenv install 5.9.1
-  ndenv global 5.9.1
-
   sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
   chsh -s /usr/local/bin/zsh
 
-  echo "Cloning tmux-powerline ..."
+  echo "Installing tmux-powerline ..."
   git clone https://github.com/minerva1129/tmux-powerline ~/tmux-powerline
 
-  echo "Cloning vimpager ..."
+  echo "Installing vimpager ..."
   git clone https://github.com/rkitover/vimpager ~/vimpager
   cd ~/vimpager
   make install
