@@ -135,8 +135,6 @@ function chpwd() {
 # -------------------------------------
 # エイリアス
 # -------------------------------------
-alias onkeyboard='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext'
-alias offkeyboard='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext'
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias ls='ls -aG'
 alias restart="exec $SHELL -l"
