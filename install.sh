@@ -30,16 +30,13 @@ else
     git clone https://github.com/riywo/anyenv ~/.anyenv
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init -)"
+    exec $SHELL -l
   fi
 
   echo "Installing **envs ..."
   anyenv install rbenv
   anyenv install pyenv
   anyenv install ndenv
-  for D in `ls $HOME/.anyenv/envs`
-  do
-    export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
-  done
 
   echo "Installing Ruby ..."
   rbenv install 2.3.0
@@ -57,10 +54,10 @@ else
   sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
   chsh -s /usr/local/bin/zsh
 
-  echo "Cloning tmux-powerline ..."
+  echo "Installing tmux-powerline ..."
   git clone https://github.com/minerva1129/tmux-powerline ~/tmux-powerline
 
-  echo "Cloning vimpager ..."
+  echo "Installing vimpager ..."
   git clone https://github.com/rkitover/vimpager ~/vimpager
   cd ~/vimpager
   make install
