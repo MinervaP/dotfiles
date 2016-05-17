@@ -30,26 +30,12 @@ else
     git clone https://github.com/riywo/anyenv ~/.anyenv
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init -)"
-    exec $SHELL -l
   fi
 
   echo "Installing **envs ..."
   anyenv install rbenv
   anyenv install pyenv
   anyenv install ndenv
-
-  echo "Installing Ruby ..."
-  rbenv install 2.3.0
-  rbenv global 2.3.0
-
-  echo "Installing Python ..."
-  pyenv install 2.7.9
-  pyenv install 3.5.1
-  pyenv global 3.5.1 2.7.9
-
-  echo "Installing Node.js ..."
-  ndenv install 5.9.1
-  ndenv global 5.9.1
 
   sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
   chsh -s /usr/local/bin/zsh
