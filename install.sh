@@ -28,12 +28,18 @@ else
   if [ ! `which anyenv` ]; then
     echo "Installing anyenv ..."
     git clone https://github.com/riywo/anyenv ~/.anyenv
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
   fi
 
   echo "Installing **envs ..."
   anyenv install rbenv
   anyenv install pyenv
   anyenv install ndenv
+  for D in `ls $HOME/.anyenv/envs`
+  do
+    export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+  done
 
   echo "Installing Ruby ..."
   rbenv install 2.3.0
