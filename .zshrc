@@ -110,19 +110,19 @@ setopt auto_cd
 # 入力しているコマンド名が間違っている場合にもしかして：を出す
 setopt correct
 # ビープを鳴らさない
-setopt nobeep
+setopt no_beep
 # 色を使う
 setopt prompt_subst
 # ^dでログアウトしない
-setopt ignoreeof
+setopt ignore_eof
 # バックグラウンドジョブが終了したらすぐに知らせる
-setopt no_tify
+setopt notify
 # 直前と同じコマンドをヒストリに追加しない
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 # シェル間で履歴を共有しない
-setopt no_SHARE_HISTORY
+setopt no_share_history
 # lsの省略
 function chpwd() {
   if [ 20 -gt `ls -1 | wc -l` ]; then
