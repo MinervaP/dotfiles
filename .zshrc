@@ -49,6 +49,7 @@ zplug 'zsh-users/zsh-history-substring-search'
 
 zplug 'b4b4r07/enhancd', use:enhancd.sh
 
+zplug 'riywo/anyenv', use:completions/anyenv.zsh
 zplug 'plugins/brew', from:oh-my-zsh
 zplug 'plugins/npm', from:oh-my-zsh
 
