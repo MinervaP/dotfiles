@@ -45,8 +45,6 @@ zplug 'zsh-users/zsh-completions'
 
 zplug 'zsh-users/zsh-autosuggestions'
 
-zplug 'zsh-users/zsh-history-substring-search'
-
 zplug 'b4b4r07/enhancd', use:init.sh
 
 zplug 'simonwhitaker/gibo', as:command, use:gibo
@@ -93,23 +91,12 @@ POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_SHORTEN_DELIMITER=''
 # enahancdの設定
 export ENHANCD_FILTER=fzf
-# zsh-hisroty-substring-search の設定
-zle -N history-substring-search-up
-zle -N history-substring-search-down
-bindkey '^p' history-substring-search-up
-bindkey '^n' history-substring-search-down
 # zsh-autosuggestions の設定
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 # 選択中の補完候補に色を付ける
 zstyle ':completion:*:default' menu select=2
 # dotfilesをdotをつけずに補完する
 setopt globdots
-# ^rでhistoryのやつをfzfでする 
-fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
-zle -N fh
-bindkey '^r' fh
 # パスだけで自動でcd
 setopt auto_cd
 # 入力しているコマンド名が間違っている場合にもしかして：を出す
