@@ -48,8 +48,8 @@ zplug 'simonwhitaker/gibo', as:command, use:gibo
 zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
 
 zplug 'riywo/anyenv', use:completions/anyenv.zsh
-zplug 'plugins/brew', from:oh-my-zsh, if:"which brew"
-zplug 'plugins/npm', from:oh-my-zsh, if:"which npm"
+zplug 'plugins/brew', from:oh-my-zsh, if:'which brew'
+zplug 'plugins/npm', from:oh-my-zsh, if:'which npm'
 
 # check コマンドで未インストール項目があるかどうか verbose にチェックし
 # false のとき（つまり未インストール項目がある）y/N プロンプトで
@@ -127,4 +127,6 @@ alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias ls='ls -aG'
 alias restart="exec $SHELL -l"
 alias pskl="ps aux | fzf | awk '{ print \$2 }' | xargs kill"
-
+function his() {
+  print -z $(fc -l 1 | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
