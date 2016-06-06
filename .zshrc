@@ -130,3 +130,18 @@ alias pskl="ps aux | fzf | awk '{ print \$2 }' | xargs kill"
 function his() {
   print -z $(fc -l 1 | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
+
+# -------------------------------------
+# tmuxの自動attach設定
+# -------------------------------------
+function automatically_attach_tmux() {
+  if [ -z "$TMUX" ]; then
+    if tmux has-session > /dev/null; then
+      tmux attach -t $(tmux list-session | fzf | cut -d ":" -f 1)
+    else
+      tmux new-session
+    fi
+  fi
+}
+automatically_attach_tmux
+
