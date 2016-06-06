@@ -51,6 +51,8 @@ zplug 'b4b4r07/enhancd', use:enhancd.sh
 
 zplug 'simonwhitaker/gibo', as:command, use:gibo
 
+zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
+
 zplug 'riywo/anyenv', use:completions/anyenv.zsh
 zplug 'plugins/brew', from:oh-my-zsh
 zplug 'plugins/npm', from:oh-my-zsh
