@@ -47,7 +47,7 @@ zplug 'zsh-users/zsh-autosuggestions'
 
 zplug 'zsh-users/zsh-history-substring-search'
 
-zplug 'b4b4r07/enhancd', use:enhancd.sh
+zplug 'b4b4r07/enhancd', use:init.sh
 
 zplug 'simonwhitaker/gibo', as:command, use:gibo
 
