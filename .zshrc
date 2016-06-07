@@ -38,6 +38,7 @@ zplug 'junegunn/fzf-bin', \
 zplug 'zsh-users/zsh-syntax-highlighting'
 
 zplug 'zsh-users/zsh-completions'
+zplug 'minerva1129/zsh-more-completions'
 
 zplug 'zsh-users/zsh-autosuggestions'
 
@@ -46,10 +47,6 @@ zplug 'b4b4r07/enhancd', use:init.sh
 zplug 'simonwhitaker/gibo', as:command, use:gibo
 
 zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
-
-zplug 'riywo/anyenv', use:completions/anyenv.zsh
-zplug 'plugins/brew', from:oh-my-zsh, if:'which brew'
-zplug 'plugins/npm', from:oh-my-zsh, if:'which npm'
 
 # check コマンドで未インストール項目があるかどうか verbose にチェックし
 # false のとき（つまり未インストール項目がある）y/N プロンプトで
