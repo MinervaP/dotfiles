@@ -39,7 +39,7 @@ zplug 'zsh-users/zsh-syntax-highlighting'
 zplug 'zsh-users/zsh-completions'
 zplug 'minerva1129/zsh-more-completions'
 
-zplug 'zsh-users/zsh-autosuggestions'
+zplug 'minerva1129/zsh-autosuggestions'
 
 zplug 'b4b4r07/enhancd', use:init.sh
 
@@ -81,6 +81,8 @@ POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_SHORTEN_DELIMITER=''
 # enahancdの設定
 ENHANCD_FILTER=fzf
+# zsh-autosuggestions の設定
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 # 選択中の補完候補に色を付ける
 zstyle ':completion:*:default' menu select=2
 # dotfilesをdotをつけずに補完する
@@ -142,5 +144,3 @@ automatically_attach_tmux
 
 # プラグインを読み込み、コマンドにパスを通す
 zplug load --verbose
-# zsh-autosuggestions の設定
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
