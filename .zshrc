@@ -27,7 +27,6 @@ source ~/.zplug/init.zsh || { git clone https://github.com/b4b4r07/zplug.git ~/.
 
 zplug 'b4b4r07/zplug', at:v2  # don't forget to zplug update --self && zplug update
 
-POWERLEVEL9K_MODE='awesome-patched'
 zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 
 zplug 'junegunn/fzf-bin', \
@@ -58,9 +57,6 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# プラグインを読み込み、コマンドにパスを通す
-zplug load --verbose
-
 # -------------------------------------
 # 環境変数
 # -------------------------------------
@@ -75,6 +71,7 @@ export PAGER=vimpager
 # jjでノーマルモードに戻る
 bindkey -M viins 'jj' vi-cmd-mode
 # powerlevel9kの設定
+POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status_joined background_jobs_joined root_indicator_joined context_joined dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode)
 POWERLEVEL9K_OS_ICON_BACKGROUND='234'
@@ -83,9 +80,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_SHORTEN_DELIMITER=''
 # enahancdの設定
-export ENHANCD_FILTER=fzf
-# zsh-autosuggestions の設定
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+ENHANCD_FILTER=fzf
 # 選択中の補完候補に色を付ける
 zstyle ':completion:*:default' menu select=2
 # dotfilesをdotをつけずに補完する
@@ -144,3 +139,8 @@ function automatically_attach_tmux() {
 }
 automatically_attach_tmux
 
+
+# プラグインを読み込み、コマンドにパスを通す
+zplug load --verbose
+# zsh-autosuggestions の設定
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
