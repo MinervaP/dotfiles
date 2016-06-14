@@ -90,6 +90,8 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 zstyle ':completion:*:default' menu select=2
 # dotfilesをdotをつけずに補完する
 setopt globdots
+# 拡張glob
+setopt extended_glob
 # パスだけで自動でcd
 setopt auto_cd
 # 入力しているコマンド名が間違っている場合にもしかして：を出す
