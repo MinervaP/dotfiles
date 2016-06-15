@@ -230,7 +230,7 @@ highlight EasyMotionTarget2Second ctermbg=none ctermfg=darkcyan
 let g:unite_enable_start_insert = 1
 let g:unite_source_history_yank_enable =1
 " fileで隠しファイルも表示する
-call unite#custom#source('file', 'matchers', "matcher_default")
+call unite#custom#source('file', 'matchers', 'matcher_default')
 " UniteのPrefix
 nnoremap [unite] <Nop>
 nmap <Leader>u [unite]
@@ -249,7 +249,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " ファイル指定で開かれた場合とvimpagerのときはNERDTreeは表示しない
 autocmd vimenter * if !(argc() || exists('g:vimpager')) | NERDTree | endif
 " 最後のバッファを閉じるときにNERDTreeも一緒に閉じる
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 " 隠しファイルを表示
 let g:NERDTreeShowHidden = 1
 " C-eでNERDTreeをトグルする
@@ -260,10 +260,8 @@ noremap <silent><C-e> :NERDTreeToggle<CR>
 " -------------------------------------
 map p <Plug>(yankround-p)
 map P <Plug>(yankround-P)
-map gp <Plug>(yankround-gp)
-map gP <Plug>(yankround-gP)
-map <C-p> <Plug>(yankround-prev)
-map <C-n> <Plug>(yankround-next)
+map <C-n> <Plug>(yankround-prev)
+map <C-p> <Plug>(yankround-next)
 
 " -------------------------------------
 " previmの設定

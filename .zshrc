@@ -45,7 +45,7 @@ zplug 'b4b4r07/enhancd', use:init.sh
 
 zplug 'simonwhitaker/gibo', as:command, use:gibo
 
-zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
+zplug 'stedolan/jq', from:gh-r, as:command, rename-to:jq
 
 # check コマンドで未インストール項目があるかどうか verbose にチェックし
 # false のとき（つまり未インストール項目がある）y/N プロンプトで
@@ -133,10 +133,12 @@ function his() {
 function automatically_attach_tmux() {
   if [ -z "$TMUX" ]; then
     if tmux has-session > /dev/null; then
-      tmux attach -t $(tmux list-session | fzf | cut -d ":" -f 1)
+      tmux attach -t $(tmux list-session | fzf | cut -d ':' -f 1)
     else
       tmux new-session
     fi
+  else
+    echo 'Using tmux...'
   fi
 }
 automatically_attach_tmux
