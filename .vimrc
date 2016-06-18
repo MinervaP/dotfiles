@@ -127,6 +127,8 @@ colorscheme solarized
 let g:solarized_termcolors = 256
 let g:solarized_termtrans = 1
 
+highlight CursorLineNr cterm=reverse
+
 " -------------------------------------
 " lightline.vimの設定
 " -------------------------------------
