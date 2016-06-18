@@ -128,8 +128,11 @@ function his() {
 }
 
 # -------------------------------------
-# tmuxの自動attach設定
-# -------------------------------------
+
+# プラグインを読み込み、コマンドにパスを通す
+zplug load --verbose
+
+# tmux自動attach
 function automatically_attach_tmux() {
   if [ -z "$TMUX" ]; then
     if tmux has-session > /dev/null; then
@@ -143,6 +146,3 @@ function automatically_attach_tmux() {
 }
 automatically_attach_tmux
 
-
-# プラグインを読み込み、コマンドにパスを通す
-zplug load --verbose
