@@ -46,7 +46,6 @@ set history=10000
 set visualbell
 set t_vb=
 set noerrorbells
-set wrap
 set display=lastline
 set textwidth=0
 set pumheight=10
