@@ -14,6 +14,7 @@ else
   ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
   ln -sf ~/dotfiles/.pryrc ~/.pryrc
   ln -sf ~/dotfiles/.vimperatorrc ~/.vimperatorrc
+  ln -sf ~/dotfiles/.xvimrc ~/.xvimrc
   ln -sf ~/dotfiles/Brewfile ~/Brewfile
 
   if [ ! `which brew` ]; then
