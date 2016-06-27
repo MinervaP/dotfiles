@@ -43,6 +43,8 @@ zplug 'minerva1129/zsh-autosuggestions'
 
 zplug 'b4b4r07/enhancd', use:init.sh
 
+zplug 'mollifier/anyframe'
+
 zplug 'simonwhitaker/gibo', as:command, use:gibo
 
 zplug 'stedolan/jq', from:gh-r, as:command, rename-to:jq
@@ -81,8 +83,10 @@ POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_SHORTEN_DELIMITER=''
 # enahancdの設定
 ENHANCD_FILTER=fzf
-# zsh-autosuggestions の設定
+# zsh-autosuggestionsの設定
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+# anyframeの設定
+bindkey '^r' anyframe-widget-put-history
 # 選択中の補完候補に色を付ける
 zstyle ':completion:*:default' menu select=2
 # dotfilesをdotをつけずに補完する
@@ -122,10 +126,7 @@ function chpwd() {
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias ls='ls -aG'
 alias restart="exec $SHELL -l"
-alias pskl="ps aux | fzf | awk '{ print \$2 }' | xargs kill"
-function his() {
-  print -z $(fc -l 1 | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
+alias kl="anyframe-widget-kill"
 
 # -------------------------------------
 
