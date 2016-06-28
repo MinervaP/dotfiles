@@ -1,3 +1,6 @@
 [submodule "tmux-powerline"]
 	path = tmux-powerline
 	url = git@github.com:minerva1129/tmux-powerline.git
+[submodule "vimpager"]
+	path = vimpager
+	url = git@github.com:rkitover/vimpager.git
