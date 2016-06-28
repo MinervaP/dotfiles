@@ -2,8 +2,6 @@
 This is dotfiles.
 ## Usage
 ```bash
-git clone http://github.com/minerva1129/dotfiles.git ~/dotfiles
-cd dotfiles
-./install.sh
+curl -L https://gist.github.com/minerva1129/8b962cf0a0eb7540b1c8d74389ab3fdb/raw/dotfiles.sh | sh
 ```
 Warning: Only works on **OS X**
