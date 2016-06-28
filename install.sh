@@ -38,8 +38,7 @@ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /usr/local/bin/zsh
 
 echo 'Installing vimpager...'
-git clone https://github.com/rkitover/vimpager ~/vimpager
-cd ~/vimpager
+cd ~/dotfiles/vimpager
 make install
 cd ~
 
