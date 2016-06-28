@@ -37,9 +37,6 @@ anyenv install ndenv
 sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /usr/local/bin/zsh
 
-echo 'Installing tmux-powerline...'
-git clone https://github.com/minerva1129/tmux-powerline ~/tmux-powerline
-
 echo 'Installing vimpager...'
 git clone https://github.com/rkitover/vimpager ~/vimpager
 cd ~/vimpager
