@@ -5,7 +5,7 @@ if [ ! $(uname -s) == 'Darwin' ]; then
   exit 1
 fi
 
-cd ~
+pushd ~
 
 echo 'Linking dotfiles...'
 dotfiles=(Brewfile .gitconfig .zshrc .vimrc .tmux.conf .vimperatorrc .xvimrc .pryrc)
@@ -38,8 +38,9 @@ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /usr/local/bin/zsh
 
 echo 'Installing vimpager...'
-cd ~/dotfiles/vimpager
+pushd ~/dotfiles/vimpager
 make install
-cd ~
+popd
 
+popd
 zsh
