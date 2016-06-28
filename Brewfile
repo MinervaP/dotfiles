@@ -6,6 +6,7 @@ brew 'vim', args: ['with-lua']
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'zsh'
+brew 'coreutils'
 brew 'sourcekitten'
 
 tap 'sanemat/font'

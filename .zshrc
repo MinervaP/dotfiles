@@ -34,6 +34,8 @@ zplug 'junegunn/fzf-bin', \
     from:gh-r, \
     rename-to:fzf
 
+zplug 'seebi/dircolors-solarized'
+
 zplug 'zsh-users/zsh-syntax-highlighting'
 
 zplug 'zsh-users/zsh-completions'
@@ -81,6 +83,9 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_SHORTEN_DELIMITER=''
+# dircolors-solarizedの設定
+eval $(gdircolors $ZPLUG_HOME/repos/seebi/dircolors-solarized/dircolors.ansi-universal)
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # enahancdの設定
 ENHANCD_FILTER=fzf
 # zsh-autosuggestionsの設定
@@ -114,9 +119,9 @@ setopt no_share_history
 # lsの省略
 function chpwd() {
   if [ 20 -gt `ls -1 | wc -l` ]; then
-    ls -aG
+    gls -AFh --color
   else
-    ls -G
+    gls -Fh --color
   fi
 }
 
@@ -124,7 +129,7 @@ function chpwd() {
 # エイリアス
 # -------------------------------------
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
-alias ls='ls -aG'
+alias ls='gls -AFh --color'
 alias restart="exec $SHELL -l"
 alias kl="anyframe-widget-kill"
 
