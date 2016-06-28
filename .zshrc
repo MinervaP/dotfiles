@@ -25,7 +25,7 @@ fi
 # zplugがないときはクローンする
 source ~/.zplug/init.zsh || { git clone https://github.com/b4b4r07/zplug.git ~/.zplug && source ~/.zplug/init.zsh }
 
-zplug 'b4b4r07/zplug', at:v2  # don't forget to zplug update --self && zplug update
+zplug 'b4b4r07/zplug', at:v2
 
 zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 
@@ -51,9 +51,7 @@ zplug 'simonwhitaker/gibo', as:command, use:gibo
 
 zplug 'stedolan/jq', from:gh-r, as:command, rename-to:jq
 
-# check コマンドで未インストール項目があるかどうか verbose にチェックし
-# false のとき（つまり未インストール項目がある）y/N プロンプトで
-# インストールする
+# 未インストールのものをインストール
 if ! zplug check --verbose; then
     printf 'Install? [y/N]: '
     if read -q; then
@@ -70,10 +68,14 @@ export EDITOR=vim
 export PAGER=vimpager
 
 # -------------------------------------
-# そのた
+# キーバインド
 # -------------------------------------
 # jjでノーマルモードに戻る
 bindkey -M viins 'jj' vi-cmd-mode
+
+# -------------------------------------
+# プラグインの設定
+# -------------------------------------
 # powerlevel9kの設定
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status_joined background_jobs_joined root_indicator_joined context_joined dir vcs)
@@ -92,31 +94,23 @@ ENHANCD_FILTER=fzf
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 # anyframeの設定
 bindkey '^r' anyframe-widget-put-history
-# 選択中の補完候補に色を付ける
-zstyle ':completion:*:default' menu select=2
-# dotfilesをdotをつけずに補完する
-setopt globdots
-# 拡張glob
-setopt extended_glob
-# パスだけで自動でcd
-setopt auto_cd
-# 入力しているコマンド名が間違っている場合にもしかして：を出す
-setopt correct
-# ビープを鳴らさない
+
+# -------------------------------------
+# そのた
+# -------------------------------------
 setopt no_beep
-# 色を使う
-setopt prompt_subst
-# ^dでログアウトしない
 setopt ignore_eof
-# バックグラウンドジョブが終了したらすぐに知らせる
 setopt notify
-# 直前と同じコマンドをヒストリに追加しない
+
+setopt correct
+setopt globdots
+zstyle ':completion:*:default' menu select=2
+
 setopt hist_ignore_dups
-setopt hist_ignore_all_dups
 setopt hist_ignore_space
-# シェル間で履歴を共有しない
 setopt no_share_history
-# lsの省略
+
+setopt auto_cd
 function chpwd() {
   if [ 20 -gt `ls -1 | wc -l` ]; then
     gls -AFh --color
@@ -134,8 +128,7 @@ alias restart="exec $SHELL -l"
 alias kl="anyframe-widget-kill"
 
 # -------------------------------------
-
-# プラグインを読み込み、コマンドにパスを通す
+# -------------------------------------
 zplug load --verbose
 
 # tmux自動attach
@@ -150,5 +143,5 @@ function automatically_attach_tmux() {
     echo 'Using tmux...'
   fi
 }
-automatically_attach_tmux
+# automatically_attach_tmux
 
