@@ -140,5 +140,5 @@ function automatically_attach_tmux() {
     echo 'Using tmux...'
   fi
 }
-# automatically_attach_tmux
+automatically_attach_tmux
 
