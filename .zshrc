@@ -15,8 +15,8 @@ compinit -u
 # anyenv
 # -------------------------------------
 if [ -d ~/.anyenv ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
 fi
 
 # -------------------------------------
@@ -29,10 +29,7 @@ zplug 'b4b4r07/zplug', at:v2
 
 zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 
-zplug 'junegunn/fzf-bin', \
-    as:command, \
-    from:gh-r, \
-    rename-to:fzf
+zplug 'junegunn/fzf-bin', as:command, from:gh-r, rename-to:fzf
 
 zplug 'seebi/dircolors-solarized'
 
@@ -53,10 +50,10 @@ zplug 'stedolan/jq', from:gh-r, as:command, rename-to:jq
 
 # 未インストールのものをインストール
 if ! zplug check --verbose; then
-    printf 'Install? [y/N]: '
-    if read -q; then
-        echo; zplug install
-    fi
+  echo 'Install? [y/N]: '
+  if read -q; then
+    echo; zplug install
+  fi
 fi
 
 # -------------------------------------
