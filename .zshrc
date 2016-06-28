@@ -5,7 +5,7 @@ SAVEHIST=1000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename "$HOME/.zshrc"
+zstyle :compinstall filename ~/.zshrc
 
 autoload -Uz compinit
 compinit -u
@@ -14,7 +14,7 @@ compinit -u
 # -------------------------------------
 # anyenv
 # -------------------------------------
-if [ -d ${HOME}/.anyenv ] ; then
+if [ -d ~/.anyenv ] ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init -)"
 fi
