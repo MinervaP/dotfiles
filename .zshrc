@@ -67,6 +67,16 @@ export PAGER=vimpager
 # -------------------------------------
 # キーバインド
 # -------------------------------------
+function extended_logout() {
+  echo; echo -n 'Logout? [y/N]: '
+  if read -q; then
+    exit
+  else
+    zle send-break
+  fi
+}
+zle -N extended-logout extended_logout
+bindkey '^d' extended-logout
 
 # -------------------------------------
 # プラグインの設定
