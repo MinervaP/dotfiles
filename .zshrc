@@ -118,9 +118,9 @@ setopt no_share_history
 setopt auto_cd
 function chpwd() {
   if [ 20 -gt `ls -1 | wc -l` ]; then
-    gls -AFh --color
+    [ $PWD = $HOME ] || gls -AFh --color
   else
-    gls -Fh --color
+    [ $PWD = $HOME ] || gls -Fh --color
   fi
 }
 
