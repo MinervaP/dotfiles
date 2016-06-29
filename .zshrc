@@ -137,16 +137,18 @@ alias kl="anyframe-widget-kill"
 zplug load --verbose
 
 # tmux自動attach
-function automatically_attach_tmux() {
+function auto_attach_tmux() {
   if [ -z "$TMUX" ]; then
     if tmux has-session > /dev/null; then
-      tmux attach -t $(tmux list-session | fzf | cut -d ':' -f 1)
+      echo 'Attach tmux session? [y/N]: '
+      read -q && tmux attach -t $(tmux list-session | fzf | cut -d ':' -f 1)
     else
-      tmux new-session
+      echo 'Create new tmux session? [y/N]: '
+      read -q && tmux new-session
     fi
   else
     echo 'Using tmux...'
   fi
 }
-automatically_attach_tmux
+auto_attach_tmux
 
