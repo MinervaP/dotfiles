@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename ~/.zshrc
@@ -67,8 +67,6 @@ export PAGER=vimpager
 # -------------------------------------
 # キーバインド
 # -------------------------------------
-# jjでノーマルモードに戻る
-bindkey -M viins 'jj' vi-cmd-mode
 
 # -------------------------------------
 # プラグインの設定
@@ -76,7 +74,7 @@ bindkey -M viins 'jj' vi-cmd-mode
 # powerlevel9kの設定
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status_joined background_jobs_joined root_indicator_joined context_joined dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_OS_ICON_BACKGROUND='234'
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
