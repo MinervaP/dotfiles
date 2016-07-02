@@ -26,26 +26,16 @@ fi
 source ~/.zplug/init.zsh || { git clone https://github.com/b4b4r07/zplug.git ~/.zplug && source ~/.zplug/init.zsh }
 
 zplug 'b4b4r07/zplug', at:v2
-
 zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
-
 zplug 'junegunn/fzf-bin', as:command, from:gh-r, rename-to:fzf
-
 zplug 'seebi/dircolors-solarized'
-
 zplug 'zsh-users/zsh-syntax-highlighting'
-
 zplug 'zsh-users/zsh-completions'
 zplug 'minerva1129/zsh-more-completions'
-
 zplug 'minerva1129/zsh-autosuggestions'
-
 zplug 'b4b4r07/enhancd', use:init.sh
-
 zplug 'mollifier/anyframe'
-
 zplug 'simonwhitaker/gibo', as:command, use:gibo
-
 zplug 'stedolan/jq', from:gh-r, as:command, rename-to:jq
 
 # 未インストールのものをインストール
