@@ -9,9 +9,6 @@ brew 'zsh'
 brew 'coreutils'
 brew 'swiftlint'
 
-tap 'sanemat/font'
-brew 'ricty', args: ['powerline']
-
 cask 'google-japanese-ime'
 cask 'firefox'
 cask 'iterm2'
