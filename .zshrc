@@ -34,7 +34,6 @@ zplug 'zsh-users/zsh-completions'
 zplug 'minerva1129/zsh-more-completions'
 zplug 'minerva1129/zsh-autosuggestions'
 zplug 'b4b4r07/enhancd', use:init.sh
-zplug 'mollifier/anyframe'
 zplug 'simonwhitaker/gibo', as:command, use:gibo
 zplug 'stedolan/jq', from:gh-r, as:command, rename-to:jq
 
@@ -68,6 +67,13 @@ function extended_logout() {
 zle -N extended-logout extended_logout
 bindkey '^d' extended-logout
 
+function fzf_history() {
+  print -z $(history -n -r 1 | awk '!a[$0]++' | fzf --no-sort)
+  zle accept-line
+}
+zle -N fzf-history fzf_history
+bindkey '^r' fzf-history
+
 # -------------------------------------
 # プラグインの設定
 # -------------------------------------
@@ -87,8 +93,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 ENHANCD_FILTER=fzf
 # zsh-autosuggestionsの設定
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
-# anyframeの設定
-bindkey '^r' anyframe-widget-put-history
 
 # -------------------------------------
 # そのた
@@ -114,13 +118,17 @@ function chpwd() {
   fi
 }
 
+# fzfでprocessをkill
+function kl() {
+  ps -u $USER -o pid,stat,%cpu,%mem,cputime,command | fzf | awk '{print $1}' | xargs kill
+}
+
 # -------------------------------------
 # エイリアス
 # -------------------------------------
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias ls='gls -AFh --color'
 alias restart="exec $SHELL -l"
-alias kl="anyframe-widget-kill"
 
 # -------------------------------------
 # -------------------------------------
