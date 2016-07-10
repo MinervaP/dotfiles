@@ -32,7 +32,6 @@ zplug 'seebi/dircolors-solarized'
 zplug 'zsh-users/zsh-syntax-highlighting'
 zplug 'zsh-users/zsh-completions'
 zplug 'minerva1129/zsh-more-completions'
-zplug 'minerva1129/zsh-autosuggestions'
 zplug 'b4b4r07/enhancd', use:init.sh
 zplug 'simonwhitaker/gibo', as:command, use:gibo
 zplug 'stedolan/jq', from:gh-r, as:command, rename-to:jq
@@ -91,8 +90,6 @@ eval $(gdircolors $ZPLUG_HOME/repos/seebi/dircolors-solarized/dircolors.ansi-uni
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # enahancdの設定
 ENHANCD_FILTER=fzf
-# zsh-autosuggestionsの設定
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
 # -------------------------------------
 # そのた
