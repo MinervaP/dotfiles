@@ -31,6 +31,7 @@ zplug 'junegunn/fzf-bin', as:command, from:gh-r, rename-to:fzf
 zplug 'seebi/dircolors-solarized'
 zplug 'zsh-users/zsh-syntax-highlighting'
 zplug 'zsh-users/zsh-history-substring-search'
+zplug 'minerva1129/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
 zplug 'minerva1129/zsh-more-completions'
 zplug 'b4b4r07/enhancd', use:init.sh
@@ -93,6 +94,8 @@ eval $(gdircolors $ZPLUG_HOME/repos/seebi/dircolors-solarized/dircolors.ansi-uni
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # enahancdの設定
 ENHANCD_FILTER=fzf
+# zsh-autosuggestionsの設定
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
 # -------------------------------------
 # そのた
