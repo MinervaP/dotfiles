@@ -73,8 +73,8 @@ function fzf_history() {
 }
 zle -N fzf-history fzf_history
 
-bindkey '^p' history-substring-search-up
-bindkey '^n' history-substring-search-down
+bindkey '^n' history-substring-search-up
+bindkey '^p' history-substring-search-down
 
 # -------------------------------------
 # プラグインの設定
