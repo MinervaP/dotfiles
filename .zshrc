@@ -30,6 +30,7 @@ zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 zplug 'junegunn/fzf-bin', as:command, from:gh-r, rename-to:fzf
 zplug 'seebi/dircolors-solarized'
 zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'zsh-users/zsh-history-substring-search'
 zplug 'zsh-users/zsh-completions'
 zplug 'minerva1129/zsh-more-completions'
 zplug 'b4b4r07/enhancd', use:init.sh
@@ -71,7 +72,9 @@ function fzf_history() {
   zle accept-line
 }
 zle -N fzf-history fzf_history
-bindkey '^r' fzf-history
+
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
 
 # -------------------------------------
 # プラグインの設定
