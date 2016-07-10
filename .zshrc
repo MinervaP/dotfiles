@@ -77,6 +77,8 @@ zle -N fzf-history fzf_history
 bindkey '^n' history-substring-search-up
 bindkey '^p' history-substring-search-down
 
+bindkey '^e' forward-word
+
 # -------------------------------------
 # プラグインの設定
 # -------------------------------------
