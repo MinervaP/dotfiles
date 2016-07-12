@@ -78,6 +78,9 @@ bindkey '^r' fzf-history
 bindkey '^n' history-substring-search-up
 bindkey '^p' history-substring-search-down
 
+bindkey '^k' forward-word
+bindkey '^m' backward-word
+
 # -------------------------------------
 # プラグインの設定
 # -------------------------------------
