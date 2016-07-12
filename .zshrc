@@ -79,7 +79,7 @@ bindkey '^n' history-substring-search-up
 bindkey '^p' history-substring-search-down
 
 bindkey '^k' forward-word
-bindkey '^m' backward-word
+bindkey '^o' backward-word
 
 # -------------------------------------
 # プラグインの設定
