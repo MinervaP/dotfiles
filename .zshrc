@@ -62,7 +62,7 @@ function extended_logout() {
   if read -q; then
     exit
   else
-    zle send-break
+    zle accept-line
   fi
 }
 zle -N extended-logout extended_logout
@@ -73,11 +73,10 @@ function fzf_history() {
   zle accept-line
 }
 zle -N fzf-history fzf_history
+bindkey '^r' fzf-history
 
 bindkey '^n' history-substring-search-up
 bindkey '^p' history-substring-search-down
-
-bindkey '^e' forward-word
 
 # -------------------------------------
 # プラグインの設定
