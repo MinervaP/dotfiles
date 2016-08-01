@@ -147,8 +147,9 @@ zplug load --verbose
 function auto_attach_tmux() {
   if [ -z "$TMUX" ]; then
     if tmux has-session > /dev/null; then
+      tmux ls
       echo 'Attach tmux session? [y/N]: '
-      read -q && tmux attach -t $(tmux list-session | fzf | cut -d ':' -f 1)
+      read -q && tmux attach -t $(tmux list-session | fzf --select-1 | cut -d ':' -f 1)
     else
       echo 'Create new tmux session? [y/N]: '
       read -q && tmux new-session
