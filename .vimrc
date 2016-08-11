@@ -69,14 +69,16 @@ call dein#begin(s:plugin_dir)
 call dein#add('Shougo/dein.vim')
 
 call dein#add('altercation/vim-colors-solarized')
-call dein#add('scrooloose/nerdtree')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Shougo/neocomplete.vim')
+call dein#add('Yggdroot/indentLine')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
-call dein#add('LeafCage/yankround.vim')
-call dein#add('Yggdroot/indentLine')
 call dein#add('easymotion/vim-easymotion')
+call dein#add('LeafCage/yankround.vim')
+
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimfiler.vim')
 
 call dein#add('tpope/vim-fugitive')
 call dein#add('airblade/vim-gitgutter')
@@ -222,21 +224,6 @@ highlight EasyMotionTarget2First ctermbg=none ctermfg=darkcyan
 highlight EasyMotionTarget2Second ctermbg=none ctermfg=darkcyan
 
 " -------------------------------------
-" NERDTreeの設定
-" -------------------------------------
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-" ファイル指定で開かれた場合とvimpagerのときはNERDTreeは表示しない
-autocmd vimenter * if !(argc() || exists('g:vimpager')) | NERDTree | endif
-" 最後のバッファを閉じるときにNERDTreeも一緒に閉じる
-autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
-" 隠しファイルを表示
-let g:NERDTreeShowHidden = 1
-" C-eでNERDTreeをトグルする
-noremap <silent><C-e> :NERDTreeToggle<CR>
-
-" -------------------------------------
 " yankround.vimの設定
 " -------------------------------------
 map p <Plug>(yankround-p)
@@ -254,3 +241,13 @@ let g:previm_enable_realtime = 1
 " -------------------------------------
 let g:gitgutter_map_keys = 0
 
+" -------------------------------------
+" vimfiler.vimの設定
+" -------------------------------------
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
+noremap <silent><C-e> :VimFiler<CR>
+" ファイル指定で開かれた場合とvimpagerのとき以外はvimfilerを表示する
+autocmd vimenter * if !(argc() || exists('g:vimpager')) | VimFilerExplorer | endif
+" autocmd bufenter * if (winnr('$') == 1 && exists('b:vimfiler') && b:NERDTree.isTabTree()) | q | endif
+let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
