@@ -67,18 +67,21 @@ execute 'set runtimepath^=' . s:dein_dir
 call dein#begin(s:plugin_dir)
 
 call dein#add('Shougo/dein.vim')
+
 call dein#add('altercation/vim-colors-solarized')
-call dein#add('itchyny/lightline.vim')
-call dein#add('tpope/vim-fugitive')
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('easymotion/vim-easymotion')
 call dein#add('scrooloose/nerdtree')
+call dein#add('itchyny/lightline.vim')
+call dein#add('Shougo/neocomplete.vim')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
 call dein#add('LeafCage/yankround.vim')
-call dein#add('tyru/open-browser.vim')
-call dein#add('airblade/vim-gitgutter')
 call dein#add('Yggdroot/indentLine')
+call dein#add('easymotion/vim-easymotion')
+
+call dein#add('tpope/vim-fugitive')
+call dein#add('airblade/vim-gitgutter')
+
+call dein#add('tyru/open-browser.vim')
 call dein#add('minerva1129/previm')
 
 call dein#end()
