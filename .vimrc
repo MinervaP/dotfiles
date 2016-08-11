@@ -72,9 +72,6 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('easymotion/vim-easymotion')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/neomru.vim')
-call dein#add('Shougo/neoyank.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
@@ -220,22 +217,6 @@ map <Leader> <Plug>(easymotion-prefix)
 highlight EasyMotionTarget ctermbg=none ctermfg=darkred
 highlight EasyMotionTarget2First ctermbg=none ctermfg=darkcyan
 highlight EasyMotionTarget2Second ctermbg=none ctermfg=darkcyan
-
-" -------------------------------------
-" Unite.vimの設定
-" -------------------------------------
-let g:unite_enable_start_insert = 1
-let g:unite_source_history_yank_enable =1
-" fileで隠しファイルも表示する
-call unite#custom#source('file', 'matchers', 'matcher_default')
-" UniteのPrefix
-nnoremap [unite] <Nop>
-nmap <Leader>u [unite]
-" Prefix + uで最近開いたファイル fでカレントディレクトリ以下の全ファイル yでヤンク履歴 nで新規ファイル作成
-nnoremap <silent> [unite]u :<C-u>Unite file_mru buffer<CR>
-nnoremap <silent> [unite]f :<C-u>Unite file_rec<CR>
-nnoremap <silent> [unite]y :<C-u>Unite yankround history/yank<CR>
-nnoremap <silent> [unite]n :<C-u>Unite file/new<CR>
 
 " -------------------------------------
 " NERDTreeの設定
