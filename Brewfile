@@ -7,6 +7,7 @@ brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'zsh'
 brew 'coreutils'
+brew 'binutils'
 brew 'swiftlint'
 
 cask 'google-japanese-ime'
