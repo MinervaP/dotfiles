@@ -22,10 +22,9 @@ fi
 # -------------------------------------
 # zplug
 # -------------------------------------
-# zplugがないときはクローンする
-source ~/.zplug/init.zsh || { git clone https://github.com/b4b4r07/zplug.git ~/.zplug && source ~/.zplug/init.zsh }
+source ~/.zplug/init.zsh
 
-zplug 'b4b4r07/zplug', at:v2
+zplug 'zplug/zplug'
 zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 zplug 'junegunn/fzf-bin', as:command, from:gh-r, rename-to:fzf
 zplug 'seebi/dircolors-solarized'
