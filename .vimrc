@@ -228,8 +228,8 @@ highlight EasyMotionTarget2Second ctermbg=none ctermfg=darkcyan
 " -------------------------------------
 map p <Plug>(yankround-p)
 map P <Plug>(yankround-P)
-map <C-n> <Plug>(yankround-prev)
-map <C-p> <Plug>(yankround-next)
+map <C-p> <Plug>(yankround-prev)
+map <C-n> <Plug>(yankround-next)
 
 " -------------------------------------
 " previmの設定

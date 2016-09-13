@@ -75,8 +75,8 @@ function fzf_history() {
 zle -N fzf-history fzf_history
 bindkey '^r' fzf-history
 
-bindkey '^n' history-substring-search-up
-bindkey '^p' history-substring-search-down
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
 
 bindkey '^k' forward-word
 bindkey '^o' backward-word
