@@ -16,7 +16,7 @@ compinit -u
 # -------------------------------------
 if [ -d ~/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
+  eval "$(anyenv init - zsh)"
 fi
 
 # -------------------------------------

@@ -27,7 +27,7 @@ if [ ! `which anyenv` ]; then
   echo 'Installing anyenv...'
   git clone https://github.com/riywo/anyenv ~/.anyenv
   export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
+  eval "$(anyenv init - zsh)"
 fi
 
 echo 'Installing **envs...'
