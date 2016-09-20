@@ -5,8 +5,6 @@ if [ ! $(uname -s) == 'Darwin' ]; then
   exit 1
 fi
 
-pushd ~
-
 echo 'Linking dotfiles...'
 dotfiles=(Brewfile .gitconfig .zshrc .vimrc .tmux.conf .vimperatorrc .xvimrc .pryrc)
 for file in ${dotfiles[@]}; do
@@ -26,7 +24,7 @@ brew bundle
 if [ ! `which anyenv` ]; then
   echo 'Installing anyenv...'
   git clone https://github.com/riywo/anyenv ~/.anyenv
-  export PATH="$HOME/.anyenv/bin:$PATH"
+  export PATH=~/.anyenv/bin:$PATH
   eval "$(anyenv init - zsh)"
 fi
 
@@ -39,9 +37,6 @@ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /usr/local/bin/zsh
 
 echo 'Installing vimpager...'
-pushd ~/dotfiles/vimpager
-make install
-popd
+make install -C ~/dotfiles/vimpager
 
-popd
 zsh
