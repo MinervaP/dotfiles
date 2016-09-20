@@ -6,10 +6,7 @@ if [ ! $(uname -s) == 'Darwin' ]; then
 fi
 
 echo 'Linking dotfiles...'
-dotfiles=(Brewfile .gitconfig .zshrc .vimrc .tmux.conf .vimperatorrc .xvimrc .pryrc)
-for file in ${dotfiles[@]}; do
-  ln -sf ~/dotfiles/$file ~/$file
-done
+source ~/dotfiles/deploy.sh
 
 if [ ! `which brew` ]; then
   echo 'Installing Homebrew...'
