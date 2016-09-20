@@ -12,8 +12,18 @@ compinit -u
 # End of lines added by compinstall
 
 # -------------------------------------
+# environment variables
+# -------------------------------------
+
+export DEFAULT_USER=Minerva
+export TERM='xterm-256color'
+export EDITOR=vim
+export PAGER=vimpager
+
+# -------------------------------------
 # anyenv
 # -------------------------------------
+
 if [ -d ~/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init - zsh)"
@@ -22,6 +32,7 @@ fi
 # -------------------------------------
 # zplug
 # -------------------------------------
+
 [ -d ~/.zplug ] || curl -sL zplug.sh/installer | zsh
 source ~/.zplug/init.zsh
 
@@ -38,7 +49,6 @@ zplug 'b4b4r07/enhancd', use:init.sh
 zplug 'simonwhitaker/gibo', as:command, use:gibo
 zplug 'stedolan/jq', from:gh-r, as:command, rename-to:jq
 
-# 未インストールのものをインストール
 if ! zplug check --verbose; then
   echo 'Install? [y/N]: '
   if read -q; then
@@ -47,16 +57,9 @@ if ! zplug check --verbose; then
 fi
 
 # -------------------------------------
-# 環境変数
+# key bind
 # -------------------------------------
-export DEFAULT_USER=Minerva
-export TERM='xterm-256color'
-export EDITOR=vim
-export PAGER=vimpager
 
-# -------------------------------------
-# キーバインド
-# -------------------------------------
 function extended_logout() {
   echo; echo -n 'Logout? [y/N]: '
   if read -q; then
@@ -82,9 +85,10 @@ bindkey '^k' forward-word
 bindkey '^o' backward-word
 
 # -------------------------------------
-# プラグインの設定
+# plugin settings
 # -------------------------------------
-# powerlevel9kの設定
+
+# powerlevel9k
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status_joined background_jobs_joined root_indicator_joined context_joined dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
@@ -93,17 +97,21 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_SHORTEN_DELIMITER=''
-# dircolors-solarizedの設定
+
+# dircolors-solarized
 eval $(gdircolors $ZPLUG_HOME/repos/seebi/dircolors-solarized/dircolors.ansi-universal)
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# enahancdの設定
+
+# enahancd
 ENHANCD_FILTER=fzf
-# zsh-autosuggestionsの設定
+
+# zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
 # -------------------------------------
-# そのた
+# others
 # -------------------------------------
+
 setopt no_beep
 setopt ignore_eof
 setopt notify
@@ -127,24 +135,27 @@ function chpwd() {
   fi
 }
 
-# fzfでprocessをkill
+# kill process with fzf 
 function kl() {
   ps -u $USER -o pid,stat,%cpu,%mem,cputime,command | fzf | awk '{print $1}' | xargs kill
 }
 
 # -------------------------------------
-# エイリアス
+# aliases 
 # -------------------------------------
+
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias ls='gls -AFh --color'
 alias restart="exec $SHELL -l"
 
 # -------------------------------------
+# loading
 # -------------------------------------
+
 zplug load --verbose
 
-# tmux自動attach
-function auto_attach_tmux() {
+# automatic attach tmux
+function tmux_auto_attach() {
   if [ -z "$TMUX" ]; then
     if tmux has-session > /dev/null; then
       tmux ls
@@ -158,5 +169,5 @@ function auto_attach_tmux() {
     echo 'Using tmux...'
   fi
 }
-auto_attach_tmux
+tmux_auto_attach
 
