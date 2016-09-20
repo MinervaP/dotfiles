@@ -66,15 +66,16 @@ function extended_logout() {
   if read -q; then
     exit
   else
-    zle accept-line
+    zle reset-prompt
   fi
 }
 zle -N extended-logout extended_logout
 bindkey '^d' extended-logout
 
 function fzf_history() {
-  print -z $(history -n -r 1 | awk '!a[$0]++' | fzf --no-sort)
-  zle accept-line
+  BUFFER=$(history -n -r 1 | awk '!a[$0]++' | fzf --no-sort)
+  CURSOR=$#BUFFER
+  zle reset-prompt
 }
 zle -N fzf-history fzf_history
 bindkey '^r' fzf-history
