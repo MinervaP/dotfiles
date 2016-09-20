@@ -1,11 +1,11 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename ~/.zshrc
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit -u
@@ -15,6 +15,7 @@ compinit -u
 # environment variables
 # -------------------------------------
 
+export DOTPATH="$HOME/dotfiles"
 export DEFAULT_USER=Minerva
 export TERM='xterm-256color'
 export EDITOR=vim
@@ -24,7 +25,7 @@ export PAGER=vimpager
 # anyenv
 # -------------------------------------
 
-if [ -d ~/.anyenv ] ; then
+if [ -d "$HOME/.anyenv" ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init - zsh)"
 fi
@@ -33,8 +34,8 @@ fi
 # zplug
 # -------------------------------------
 
-[ -d ~/.zplug ] || curl -sL zplug.sh/installer | zsh
-source ~/.zplug/init.zsh
+[ -d "$HOME/.zplug" ] || curl -sL zplug.sh/installer | zsh
+source "$HOME/.zplug/init.zsh"
 
 zplug 'zplug/zplug'
 zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
