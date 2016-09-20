@@ -1,12 +1,17 @@
 #!/bin/sh
 
-if [ ! $(uname -s) == 'Darwin' ]; then
+if [ -z $DOTPATH ]; then
+  echo '$DOTPATH is not set'
+  exit 1
+fi
+
+if [ $(uname -s) != 'Darwin' ]; then
   echo 'The install script can run only on OS X'
   exit 1
 fi
 
 echo 'Linking dotfiles...'
-source ~/dotfiles/deploy.sh
+source "$DOTPATH/deploy.sh"
 
 if [ ! `which brew` ]; then
   echo 'Installing Homebrew...'
@@ -20,9 +25,9 @@ brew bundle
 
 if [ ! `which anyenv` ]; then
   echo 'Installing anyenv...'
-  git clone https://github.com/riywo/anyenv ~/.anyenv
-  export PATH=~/.anyenv/bin:$PATH
-  eval "$(anyenv init - zsh)"
+  git clone https://github.com/riywo/anyenv "$HOME/.anyenv"
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
 fi
 
 echo 'Installing **envs...'
@@ -34,6 +39,6 @@ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /usr/local/bin/zsh
 
 echo 'Installing vimpager...'
-make install -C ~/dotfiles/vimpager
+make install -C "$DOTPATH/vimpager"
 
-zsh
+exec $SHELL -l
