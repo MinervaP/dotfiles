@@ -53,7 +53,7 @@ set pumheight=10
 " -------------------------------------
 " dein.vimの設定
 " -------------------------------------
-let s:plugin_dir = expand('~/.vim/dein/')
+let s:plugin_dir = $HOME . '/.vim/dein/'
 let s:dein_dir = s:plugin_dir . 'repos/github.com/Shougo/dein.vim'
 
 " dein.vimがないときはgit cloneする
