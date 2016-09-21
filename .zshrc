@@ -39,7 +39,6 @@ source "$HOME/.zplug/init.zsh"
 
 zplug 'zplug/zplug'
 zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
-zplug 'seebi/dircolors-solarized'
 zplug 'zsh-users/zsh-syntax-highlighting'
 zplug 'zsh-users/zsh-history-substring-search'
 zplug 'minerva1129/zsh-autosuggestions'
@@ -98,7 +97,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_SHORTEN_DELIMITER=''
 
 # dircolors-solarized
-eval $(gdircolors $ZPLUG_HOME/repos/seebi/dircolors-solarized/dircolors.ansi-universal)
+eval $(gdircolors "$DOTPATH/dircolors-solarized/dircolors.ansi-universal")
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # enahancd
