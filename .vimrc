@@ -72,6 +72,7 @@ call dein#add('altercation/vim-colors-solarized')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Yggdroot/indentLine')
+call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
 call dein#add('easymotion/vim-easymotion')
@@ -213,6 +214,11 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+" -------------------------------------
+" vim-trailing-whitespaceの設定
+" -------------------------------------
+autocmd BufWritePre * :FixWhitespace
 
 " -------------------------------------
 " vim-easymotionの設定
