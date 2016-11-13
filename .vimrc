@@ -252,7 +252,7 @@ let g:gitgutter_map_keys = 0
 " -------------------------------------
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
-noremap <silent><C-e> :VimFiler<CR>
+noremap <silent><C-e> :VimFiler -toggle<CR>
 let g:vimfiler_ignore_pattern = ['^\.$', '^\.\.$', '^\.git$', '^\.DS_Store$']
 " ファイル指定で開かれた場合とvimpagerのとき以外はvimfilerを表示する
 autocmd vimenter * if !(argc() || exists('g:vimpager')) | VimFilerExplorer | endif
