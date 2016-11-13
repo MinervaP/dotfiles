@@ -133,13 +133,13 @@ function chpwd() {
   fi
 }
 
-# kill process with fzf 
+# kill process with fzf
 function kl() {
   ps -u $USER -o pid,stat,%cpu,%mem,cputime,command | fzf | awk '{print $1}' | xargs kill
 }
 
 # -------------------------------------
-# aliases 
+# aliases
 # -------------------------------------
 
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
