@@ -67,6 +67,7 @@ execute 'set runtimepath^=' . s:dein_dir
 call dein#begin(s:plugin_dir)
 
 call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('itchyny/lightline.vim')
