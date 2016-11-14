@@ -75,6 +75,7 @@ call dein#add('Yggdroot/indentLine')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
+call dein#add('tpope/vim-surround')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('LeafCage/yankround.vim')
 
@@ -86,6 +87,10 @@ call dein#add('airblade/vim-gitgutter')
 
 call dein#add('tyru/open-browser.vim')
 call dein#add('minerva1129/previm')
+
+call dein#add('mattn/emmet-vim')
+
+call dein#add('tpope/vim-rails')
 
 call dein#end()
 
@@ -256,3 +261,9 @@ noremap <silent><C-e> :VimFiler -toggle<CR>
 let g:vimfiler_ignore_pattern = ['^\.$', '^\.\.$', '^\.git$', '^\.DS_Store$']
 " ファイル指定で開かれた場合とvimpagerのとき以外はvimfilerを表示する
 autocmd vimenter * if !(argc() || exists('g:vimpager')) | VimFilerExplorer | endif
+
+" -------------------------------------
+" emmet-vimの設定
+" -------------------------------------
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,eruby,scss EmmetInstall
