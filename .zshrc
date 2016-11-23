@@ -62,7 +62,7 @@ function extended_logout() {
   if read -q; then
     exit
   else
-    zle reset-prompt
+    zle send-break
   fi
 }
 zle -N extended-logout extended_logout
@@ -75,6 +75,14 @@ function fzf_history() {
 }
 zle -N fzf-history fzf_history
 bindkey '^r' fzf-history
+
+function fzf_ghq() {
+  local dir
+  dir=$(ghq list | fzf) && cd $(ghq root)/$dir
+  zle accept-line
+}
+zle -N fzf-ghq fzf_ghq
+bindkey '^s' fzf-ghq
 
 bindkey '^p' history-substring-search-up
 bindkey '^n' history-substring-search-down
@@ -113,6 +121,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 setopt no_beep
 setopt ignore_eof
 setopt notify
+setopt no_flow_control
 
 setopt correct
 setopt globdots
