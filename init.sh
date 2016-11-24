@@ -18,19 +18,13 @@ if [ ! `which brew` ]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew update
 echo 'Installing Homebrew packages...'
+brew update
 brew tap homebrew/brewdler
 brew bundle
 
-if [ ! `which anyenv` ]; then
-  echo 'Installing anyenv...'
-  git clone https://github.com/riywo/anyenv "$HOME/.anyenv"
-  export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
-fi
-
 echo 'Installing **envs...'
+eval "$(anyenv init -)"
 anyenv install rbenv
 anyenv install pyenv
 anyenv install ndenv

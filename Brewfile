@@ -6,6 +6,8 @@ brew 'vim', args: ['with-lua']
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'zsh'
+tap 'minerva1129/anyenv'
+brew 'anyenv', args: ['HEAD']
 brew 'coreutils'
 brew 'binutils'
 brew 'fzf'
