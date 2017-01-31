@@ -34,7 +34,7 @@ eval "$(anyenv init - zsh)"
 [ -d "$HOME/.zplug" ] || curl -sL zplug.sh/installer | zsh
 source "$HOME/.zplug/init.zsh"
 
-zplug 'zplug/zplug'
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 zplug 'zsh-users/zsh-syntax-highlighting'
 zplug 'zsh-users/zsh-history-substring-search'
