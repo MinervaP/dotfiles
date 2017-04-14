@@ -16,5 +16,5 @@ brew 'jq'
 brew 'swiftlint'
 
 cask 'google-japanese-ime'
-cask 'firefox'
+cask 'vivaldi'
 cask 'iterm2'
