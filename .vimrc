@@ -92,7 +92,6 @@ call dein#add('minerva1129/previm')
 call dein#add('mattn/emmet-vim')
 
 call dein#add('tpope/vim-rails')
-
 call dein#end()
 
 if dein#check_install()
