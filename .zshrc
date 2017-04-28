@@ -92,7 +92,7 @@ bindkey '^o' backward-word
 # -------------------------------------
 
 # powerlevel9k
-POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon status_joined background_jobs_joined root_indicator_joined context_joined dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_OS_ICON_BACKGROUND='234'
