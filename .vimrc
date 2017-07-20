@@ -223,7 +223,13 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 " -------------------------------------
 " vim-trailing-whitespaceの設定
 " -------------------------------------
-autocmd BufWritePre * :FixWhitespace
+
+function! TrailingWhitespace()
+  if &filetype != "markdown"
+    FixWhitespace
+  endif
+endfunction
+autocmd BufWrite * call TrailingWhitespace()
 
 " -------------------------------------
 " vim-easymotionの設定
@@ -260,7 +266,7 @@ let g:vimfiler_safe_mode_by_default = 0
 noremap <silent><C-e> :VimFiler -toggle<CR>
 let g:vimfiler_ignore_pattern = ['^\.$', '^\.\.$', '^\.git$', '^\.DS_Store$']
 " ファイル指定で開かれた場合とvimpagerのとき以外はvimfilerを表示する
-autocmd vimenter * if !(argc() || exists('g:vimpager')) | VimFilerExplorer | endif
+autocmd VimEnter * if !(argc() || exists('g:vimpager')) | VimFilerExplorer | endif
 
 " -------------------------------------
 " emmet-vimの設定
