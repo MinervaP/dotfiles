@@ -119,6 +119,8 @@ nnoremap <Down> gj
 nnoremap <Up>   gk
 nnoremap gj j
 nnoremap gk k
+" xでヤンクしない
+nnoremap x "_x
 
 " -------------------------------------
 " themeの設定

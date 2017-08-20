@@ -20,3 +20,4 @@ nnoremap <Down> gj
 nnoremap <Up>   gk
 nnoremap gj j
 nnoremap gk k
+nnoremap x "_x
