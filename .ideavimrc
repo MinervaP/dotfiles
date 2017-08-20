@@ -1,0 +1,22 @@
+set ignorecase
+set wrap
+set wrapscan
+set noerrorbells
+set incsearch
+set gdefault
+set smartcase
+set number
+set hlsearch
+set expandtab
+set guioptions=r
+set clipboard=unnamed
+
+nnoremap Y y$
+inoremap jj <ESC>
+noremap <ESC><ESC> :<C-u>noh<CR>
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+nnoremap gj j
+nnoremap gk k

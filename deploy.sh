@@ -5,7 +5,7 @@ if [ -z $DOTPATH ]; then
   exit 1
 fi
 
-dotfiles=(Brewfile .gitconfig .zshrc .vimrc .tmux.conf .vimperatorrc .xvimrc .pryrc)
+dotfiles=(Brewfile .gitconfig .zshrc .vimrc .tmux.conf .vimperatorrc .xvimrc .ideavimrc .pryrc)
 for file in ${dotfiles[@]}; do
   ln -sf "$DOTPATH/$file" "$HOME/$file"
 done
