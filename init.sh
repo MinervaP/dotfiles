@@ -24,6 +24,8 @@ brew tap homebrew/brewdler
 brew bundle
 
 echo 'Installing **envs...'
+anyenv init
+anyenv install --init
 eval "$(anyenv init -)"
 anyenv install rbenv
 anyenv install pyenv
