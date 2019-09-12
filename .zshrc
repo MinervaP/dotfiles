@@ -31,7 +31,8 @@ eval "$(anyenv init - zsh)"
 # zplug
 # -------------------------------------
 
-[ -d "$HOME/.zplug" ] || curl -sL zplug.sh/installer | zsh
+# [ -d "$HOME/.zplug" ] || curl -sL zplug.sh/installer | zsh
+[ -d "$HOME/.zplug" ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 source "$HOME/.zplug/init.zsh"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
