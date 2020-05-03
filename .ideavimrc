@@ -11,6 +11,7 @@ set expandtab
 set guioptions=r
 set clipboard=unnamed
 
+let mapleader = " "
 nnoremap Y y$
 inoremap jj <ESC>
 noremap <ESC><ESC> :<C-u>noh<CR>
@@ -21,3 +22,4 @@ nnoremap <Up>   gk
 nnoremap gj j
 nnoremap gk k
 nnoremap x "_x
+nnoremap <leader>r :action Run<CR>
