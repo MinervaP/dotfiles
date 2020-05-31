@@ -4,8 +4,6 @@ set nocompatible
 " -------------------------------------
 set number
 set ruler
-set cursorline
-set cursorcolumn
 set laststatus=2
 set cmdheight=2
 set showmatch
