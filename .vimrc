@@ -90,6 +90,8 @@ call dein#add('minerva1129/previm')
 call dein#add('mattn/emmet-vim')
 
 call dein#add('tpope/vim-rails')
+
+call dein#add('lervag/vimtex')
 call dein#end()
 
 if dein#check_install()
@@ -273,3 +275,14 @@ autocmd VimEnter * if !(argc() || exists('g:vimpager')) | VimFilerExplorer | end
 " -------------------------------------
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,eruby,scss EmmetInstall
+
+" -------------------------------------
+" vimtexの設定
+" -------------------------------------
+let g:tex_conceal=''
+let g:tex_flavor = 'latex'
+
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.tex = g:vimtex#re#neocomplete
