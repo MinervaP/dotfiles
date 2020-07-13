@@ -287,6 +287,5 @@ autocmd FileType html,css,eruby,scss EmmetInstall
 let g:tex_conceal=''
 let g:tex_flavor = 'latex'
 
-call deoplete#custom#var('omni', 'input_patterns', {
-          \ 'tex': g:vimtex#re#deoplete
-          \})
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
