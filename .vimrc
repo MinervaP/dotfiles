@@ -47,6 +47,9 @@ set noerrorbells
 set display=lastline
 set textwidth=0
 set pumheight=10
+set pyx=3
+set pyxversion=3
+set encoding=utf-8
 
 " -------------------------------------
 " dein.vimの設定
@@ -67,9 +70,12 @@ call dein#begin(s:plugin_dir)
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('roxma/nvim-yarp')
+call dein#add('roxma/vim-hug-neovim-rpc')
+
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('itchyny/lightline.vim')
-call dein#add('Shougo/neocomplete.vim')
 call dein#add('Yggdroot/indentLine')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('jiangmiao/auto-pairs')
@@ -203,23 +209,22 @@ endfunction
 " -------------------------------------
 " neocomplete.vimの設定
 " -------------------------------------
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 0
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:deoplete#enable_at_startup = 1
 " TABで補完
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <BS>で閉じて文字削除
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<BS>"
+inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 " omni補完を有効にする
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+if !exists('g:deoplete#sources#omni#input_patterns')
+  let g:deoplete#sources#omni#input_patterns = {}
 endif
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+call deoplete#custom#var('omni', 'input_patterns', {
+          \ 'ruby': '[^. *\t]\.\w*\|\h\w*::',
+          \ 'tex': g:vimtex#re#deoplete
+          \})
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " -------------------------------------
@@ -282,7 +287,6 @@ autocmd FileType html,css,eruby,scss EmmetInstall
 let g:tex_conceal=''
 let g:tex_flavor = 'latex'
 
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.tex = g:vimtex#re#neocomplete
+call deoplete#custom#var('omni', 'input_patterns', {
+          \ 'tex': g:vimtex#re#deoplete
+          \})
