@@ -9,3 +9,5 @@ dotfiles=(Brewfile .gitconfig .zshrc .vimrc .tmux.conf .vimperatorrc .xvimrc .id
 for file in ${dotfiles[@]}; do
   ln -sf "$DOTPATH/$file" "$HOME/$file"
 done
+
+ln -sf "$DOTPATH/init.vim" "$HOME/.config/nvim/init.vim"
