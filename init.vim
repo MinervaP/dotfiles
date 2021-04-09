@@ -60,6 +60,8 @@ call dein#add('airblade/vim-gitgutter')
 
 call dein#add('lervag/vimtex')
 
+call dein#add('copy/deoplete-ocaml')
+
 call dein#end()
 
 filetype plugin indent on
@@ -159,6 +161,9 @@ inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 if !exists('g:deoplete#sources#omni#input_patterns')
   let g:deoplete#sources#omni#input_patterns = {}
 endif
+call deoplete#custom#var('omni', 'input_patterns', {
+          \ 'tex': g:vimtex#re#deoplete
+          \})
 
 " -------------------------
 " vim-trailing-whitespace
@@ -192,3 +197,5 @@ let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute 'set rtp+=' . g:opamshare . '/merlin/vim'
