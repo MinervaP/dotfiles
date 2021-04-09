@@ -18,7 +18,7 @@ compinit -u
 export DOTPATH="$HOME/dotfiles"
 export DEFAULT_USER=Minerva
 export TERM='xterm-256color'
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=vimpager
 
 # -------------------------------------
@@ -149,6 +149,7 @@ function kl() {
 # aliases
 # -------------------------------------
 
+alias vim=nvim
 alias remem='du -sx / &> /dev/null & sleep 25 && kill $!'
 alias ls='gls -AFh --color'
 alias restart="exec $SHELL -l"
