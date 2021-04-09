@@ -88,6 +88,7 @@ nnoremap x "_x
 " themes
 " -------------------------
 colorscheme solarized
+hi clear SignColumn
 
 let g:lightline = {
         \ 'colorscheme': 'solarized',
@@ -128,8 +129,8 @@ endfunction
 
 function! LightLineFugitive()
   try
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-      return empty(fugitive#head()) ? '' : ' ' . fugitive#head()
+    if &ft !~? 'vimfiler\|gundo' && exists('*FugitiveHead')
+      return empty(FugitiveHead()) ? '' : ' ' . FugitiveHead()
     endif
   catch
   endtry
@@ -197,5 +198,8 @@ let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
+" -------------------------
+" OCaml
+" -------------------------
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute 'set rtp+=' . g:opamshare . '/merlin/vim'
