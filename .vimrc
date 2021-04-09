@@ -76,7 +76,6 @@ call dein#add('roxma/vim-hug-neovim-rpc')
 
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('itchyny/lightline.vim')
-call dein#add('Yggdroot/indentLine')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('tpope/vim-endwise')
@@ -98,6 +97,7 @@ call dein#add('mattn/emmet-vim')
 call dein#add('tpope/vim-rails')
 
 call dein#add('lervag/vimtex')
+
 call dein#end()
 
 if dein#check_install()
@@ -207,7 +207,7 @@ function! LightLineMode()
 endfunction
 
 " -------------------------------------
-" neocomplete.vimの設定
+" deocomplete.nvimの設定
 " -------------------------------------
 let g:deoplete#enable_at_startup = 1
 " TABで補完
@@ -230,7 +230,6 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 " -------------------------------------
 " vim-trailing-whitespaceの設定
 " -------------------------------------
-
 function! TrailingWhitespace()
   if &filetype != "markdown"
     FixWhitespace
@@ -284,8 +283,9 @@ autocmd FileType html,css,eruby,scss EmmetInstall
 " -------------------------------------
 " vimtexの設定
 " -------------------------------------
-let g:tex_conceal=''
+let g:tex_conceal = ''
 let g:tex_flavor = 'latex'
 
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
+
